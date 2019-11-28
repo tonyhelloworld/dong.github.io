@@ -621,7 +621,6 @@ header .h-header {
 header #logo {
   float: left;
   padding-left: 1rem;
-  padding-top: 1rem;
 }
 header #logo a {
   border-bottom: none;
