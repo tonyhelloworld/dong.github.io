@@ -621,6 +621,7 @@ header .h-header {
 header #logo {
   float: left;
   padding-left: 1rem;
+  padding-top: 1rem;
 }
 header #logo a {
   border-bottom: none;
@@ -632,6 +633,7 @@ header #logo a:hover {
 header #logo img {
   max-width: 10rem;
   max-height: 10rem;
+  padding-top: 1rem;
 }
 header #navigation-show {
   float: right;
