@@ -332,8 +332,16 @@
 <h3 id="5-无序列表"><a href="#5-无序列表" class="headerlink" title="5.无序列表"></a>5.无序列表</h3><h5 id="使用-或-或-标识"><a href="#使用-或-或-标识" class="headerlink" title="使用*或+或-标识"></a>使用*或+或-标识</h5><hr>
 <h3 id="6-代码块"><a href="#6-代码块" class="headerlink" title="6.代码块"></a>6.代码块</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">fun</span></span>()&#123;</span><br><span class="line">     console.log(<span class="string">"这是一句非常牛逼的代码"</span>);</span><br><span class="line">&#125;</span><br><span class="line">fun();</span><br></pre></td></tr></table></figure>
 <h5 id="单行代码块"><a href="#单行代码块" class="headerlink" title="单行代码块"></a><code>单行代码块</code></h5><hr>
-<h3 id="7-流程图"><a href="#7-流程图" class="headerlink" title="7.流程图"></a>7.流程图</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">st=&gt;start: 开始</span><br><span class="line">e=&gt;end: 结束</span><br><span class="line">op=&gt;operation: 我的操作</span><br><span class="line">cond=&gt;condition: 确认？</span><br><span class="line"></span><br><span class="line">st-&gt;op-&gt;cond</span><br><span class="line">cond(yes)-&gt;e</span><br><span class="line">cond(no)-&gt;op</span><br></pre></td></tr></table></figure>
-	
+<h3 id="7-流程图"><a href="#7-流程图" class="headerlink" title="7.流程图"></a>7.流程图</h3><div id="flowchart-0" class="flow-chart"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script><textarea id="flowchart-0-code" style="display: none">st=>start: 开始
+op=>operation: 处理
+cond=>condition: 判断(是或否?)
+sub1=>subroutine: 子流程
+io=>inputoutput: 输入输出
+e=>end: 结束
+st->op->cond
+cond(yes)->io->e
+cond(no)->sub1(right)->op</textarea><textarea id="flowchart-0-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-0-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-0-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-0", options);</script>	
 	</div>
 	
 	<div id="current-post-cover" data-scr="/img/cart_cover.jpg"></div>
