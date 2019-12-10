@@ -2,7 +2,7 @@
  * @Author: xuesongLi 
  * @Date: 2019-11-29 10:02:48 
  * @Last Modified by: 
- * @Last Modified time: 2019-12-03 20:32:32
+ * @Last Modified time: 2019-12-10 17:07:46
  */
 
 var a_idx = 0;
@@ -20,7 +20,9 @@ jQuery(document).ready(function($) {
             "left": x,
             "position": "absolute",
             "font-weight": "bold",
-            "color": "#ed4a75"
+            "font-family": "Ovo",
+            //  Ovo, Georgia, STZhongsong, "Microsoft YaHei", serif;
+            "color": "#FFB6C1"
         });
         $("body").append($i);
         $i.animate({
