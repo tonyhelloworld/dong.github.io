@@ -13,7 +13,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>
     
-      Hello World | xuesong
+      折叠效果 | xuesong
     
   </title>
   <meta name="author" content="xuesong">
@@ -160,7 +160,7 @@
 	<!-- Page title -->
 	<p>
 		
-			当前文章&nbsp;:&nbsp;《Hello World》
+			当前文章&nbsp;:&nbsp;《折叠效果》
 		
 	</p>
 
@@ -265,8 +265,8 @@
 	<div class="article-title">
 		<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
 		
-	<a href="/2019/11/01/hello-world/" itemprop="url">
-		Hello World
+	<a href="/2019/12/12/%E6%8A%98%E5%8F%A0%E6%95%88%E6%9E%9C/" itemprop="url">
+		折叠效果
 	</a>
 
 	</div>
@@ -279,9 +279,9 @@
 
 	发布于
 
-	<a href="/2019/11/01/hello-world/" itemprop="url">
-		<time datetime="2019-11-01T05:53:03.975Z" itemprop="datePublished">
-	  		2019-11-01
+	<a href="/2019/12/12/%E6%8A%98%E5%8F%A0%E6%95%88%E6%9E%9C/" itemprop="url">
+		<time datetime="2019-12-12T15:50:53.000Z" itemprop="datePublished">
+	  		2019-12-12
 	  </time>
 	</a>
 	&nbsp;
@@ -297,9 +297,9 @@
 
 	更新于
 
-	<a href="/2019/11/01/hello-world/" itemprop="url">
-		<time datetime="2019-11-01T05:53:03.975Z" itemprop="dateUpdated">
-	  		2019-12-10
+	<a href="/2019/12/12/%E6%8A%98%E5%8F%A0%E6%95%88%E6%9E%9C/" itemprop="url">
+		<time datetime="2019-12-12T15:50:53.000Z" itemprop="dateUpdated">
+	  		2019-12-12
 	  </time>
 	</a> 
 
@@ -308,7 +308,13 @@
 		</span>
 		<span>
 			<i class="fa fa-tags"></i>
-					
+			
+	
+		<a href="/tags/VUE/" class=" ">
+			VUE
+		</a>
+	
+		
 		</span>
 		
 		
@@ -318,20 +324,11 @@
 	</div>
 
 	<div class="article-content" id="article-content">
-		<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-	
+		<h4 id="折叠效果功能实现–-vue"><a href="#折叠效果功能实现–-vue" class="headerlink" title="折叠效果功能实现– vue"></a>折叠效果功能实现– vue</h4><figure class="highlight bash"><figcaption><span>div</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;div v-for=<span class="string">"item in showList"</span>&gt;&lt;div&gt;</span><br><span class="line">&lt;div @click=<span class="string">"showAll = !showAll"</span>&gt;&#123;&#123;world&#125;&#125;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<hr>
+<figure class="highlight bash"><figcaption><span>data</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">data</span></span>()&#123;</span><br><span class="line">    <span class="built_in">return</span> &#123;</span><br><span class="line">        showAll: <span class="literal">false</span>,</span><br><span class="line">        toLearnList:[<span class="string">'xuesong'</span>,<span class="string">'fengge'</span>,<span class="string">'liwei'</span>,<span class="string">'yaru'</span>,<span class="string">'kaisheng'</span>,<span class="string">'anqing'</span>]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<figure class="highlight bash"><figcaption><span>computed</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">computed:&#123;</span><br><span class="line">   showList:<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">     <span class="keyword">if</span>(this.showAll == <span class="literal">false</span>)&#123;                    //当数据不需要完全显示的时候</span><br><span class="line">       var showList = [];　　　　　　　　　　　　　　　 //定义一个空数组</span><br><span class="line">       <span class="keyword">if</span>(this.toLearnList.length &gt; 3)&#123;　　　　　　　//这里我们先显示前三个</span><br><span class="line">         <span class="keyword">for</span>(var i=0;i&lt;3;i++)&#123;</span><br><span class="line">           showList.push(this.toLearnList[i])</span><br><span class="line">         &#125;</span><br><span class="line">       &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">         showList = this.toLearnList</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="built_in">return</span> showList;　　　　　　　　　　　　　　　　 </span><br><span class="line">     &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">       <span class="built_in">return</span> this.toLearnList;</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;,</span><br><span class="line">   <span class="function"><span class="title">world</span></span>()&#123;</span><br><span class="line">      <span class="keyword">if</span>(this.showAll == <span class="literal">false</span>)&#123;　</span><br><span class="line">       <span class="built_in">return</span> <span class="string">'点击展开'</span></span><br><span class="line">     &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">       <span class="built_in">return</span> <span class="string">'点击收起'</span></span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line"> &#125;,</span><br></pre></td></tr></table></figure>	
 	</div>
 	
 	<div id="current-post-cover" data-scr="/img/cart_cover.jpg"></div>
@@ -349,10 +346,10 @@
 	<span>
 		<a href="javascript: window.scrollTo(0, 0);">返回顶部</a>
 		
-			<a href="/2019/11/25/markdown/" title="开始博客第一次" rel="prev">
-				&laquo;上一篇
-			</a>
 		
+			<a href="/2019/12/10/%E7%AE%97%E6%B3%95%E5%BD%92%E5%AE%97/" title="算法归宗" rel="next">
+				下一篇&raquo;
+			</a>
 			
 	</span>
 
@@ -368,29 +365,6 @@
 <div class="relate-post">
 	
 		<ul>
-			
-					<li>
-						<div class="relate-post-text">
-							<a class="relate-post-title" href="/2019/12/12/%E6%8A%98%E5%8F%A0%E6%95%88%E6%9E%9C/" title="折叠效果">
-								折叠效果			
-							</a>
-							<p class="relate-post-date">
-								<i class="fa fa-calendar"></i>
-								十二月 12日, 2019				
-							</p>
-							<p class="relate-post-content">
-								折叠效果功能实现– vuediv12&lt;div v-for="item in showList"&gt;&lt;div&gt;&lt;div @click="showAll = !showAll"&gt;&#123;&#123;w...
-							</p>
-						</div>
-
-						<div class="relate-post-cover">
-							<a href="/2019/12/12/%E6%8A%98%E5%8F%A0%E6%95%88%E6%9E%9C/" title="折叠效果">				
-								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="折叠效果"/>
-							</a>
-						</div>
-					</li>											
-			
 			
 					<li>
 						<div class="relate-post-text">
@@ -508,6 +482,29 @@ h1h2h3h4h5h6
 							<a href="/2019/11/25/markdown/" title="开始博客第一次">				
 								
 								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="开始博客第一次"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/11/01/hello-world/" title="Hello World">
+								Hello World			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十一月 1日, 2019				
+							</p>
+							<p class="relate-post-content">
+								Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using ...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/11/01/hello-world/" title="Hello World">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="Hello World"/>
 							</a>
 						</div>
 					</li>											
