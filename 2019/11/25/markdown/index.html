@@ -299,7 +299,7 @@
 
 	<a href="/2019/11/25/markdown/" itemprop="url">
 		<time datetime="2019-11-25T11:54:33.000Z" itemprop="dateUpdated">
-	  		2019-12-11
+	  		2019-12-16
 	  </time>
 	</a> 
 
@@ -333,6 +333,8 @@
 <h3 id="6-代码块"><a href="#6-代码块" class="headerlink" title="6.代码块"></a>6.代码块</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">fun</span></span>()&#123;</span><br><span class="line">     console.log(<span class="string">"这是一句非常牛逼的代码"</span>);</span><br><span class="line">&#125;</span><br><span class="line">fun();</span><br></pre></td></tr></table></figure>
 <h5 id="单行代码块"><a href="#单行代码块" class="headerlink" title="单行代码块"></a><code>单行代码块</code></h5><hr>
 <h3 id="7-流程图"><a href="#7-流程图" class="headerlink" title="7.流程图"></a>7.流程图</h3><div id="flowchart-0" class="flow-chart"></div>
+### 8.改为中文：
+##### 在主题_config.yml 中配置文件中找到language:en改为zh-CN
 <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script><textarea id="flowchart-0-code" style="display: none">st=>start: 开始
 op=>operation: 处理
 cond=>condition: 判断(是或否?)
@@ -488,7 +490,9 @@ cond(no)->sub1(right)->op</textarea><textarea id="flowchart-0-options" style="di
 								十二月 4日, 2019				
 							</p>
 							<p class="relate-post-content">
-								es6学习—–阮一峰大佬第一章 第一节1.let 和const 声明的变量无变量提升，在他们之前执行该变量都将报错 此为暂时性死区2.var和function的全局声明会自动绑定到window或global对象，这是ES5全局变量的一...
+								es6学习—–阮一峰大佬第一章 第一节1.let 和const 声明的变量无变量提升，在他们之前执行该变量都将报错 此为暂时性死区,var 会有hoisting（提升机制）
+
+所以块级声明用于声明在指定块的作用域之外无法访问的变量存在...
 							</p>
 						</div>
 
