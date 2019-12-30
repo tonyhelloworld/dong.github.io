@@ -13,7 +13,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>
     
-      vscode安装 | xuesong
+      字符对比 | xuesong
     
   </title>
   <meta name="author" content="xuesong">
@@ -160,7 +160,7 @@
 	<!-- Page title -->
 	<p>
 		
-			当前文章&nbsp;:&nbsp;《vscode安装》
+			当前文章&nbsp;:&nbsp;《字符对比》
 		
 	</p>
 
@@ -265,8 +265,8 @@
 	<div class="article-title">
 		<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
 		
-	<a href="/2019/12/24/vscode%E5%AE%89%E8%A3%85/" itemprop="url">
-		vscode安装
+	<a href="/2019/12/30/%E5%AD%97%E7%AC%A6%E5%AF%B9%E6%AF%94/" itemprop="url">
+		字符对比
 	</a>
 
 	</div>
@@ -279,9 +279,9 @@
 
 	发布于
 
-	<a href="/2019/12/24/vscode%E5%AE%89%E8%A3%85/" itemprop="url">
-		<time datetime="2019-12-24T09:07:39.000Z" itemprop="datePublished">
-	  		2019-12-24
+	<a href="/2019/12/30/%E5%AD%97%E7%AC%A6%E5%AF%B9%E6%AF%94/" itemprop="url">
+		<time datetime="2019-12-30T10:41:08.000Z" itemprop="datePublished">
+	  		2019-12-30
 	  </time>
 	</a>
 	&nbsp;
@@ -297,9 +297,9 @@
 
 	更新于
 
-	<a href="/2019/12/24/vscode%E5%AE%89%E8%A3%85/" itemprop="url">
-		<time datetime="2019-12-24T09:07:39.000Z" itemprop="dateUpdated">
-	  		2019-12-24
+	<a href="/2019/12/30/%E5%AD%97%E7%AC%A6%E5%AF%B9%E6%AF%94/" itemprop="url">
+		<time datetime="2019-12-30T10:41:08.000Z" itemprop="dateUpdated">
+	  		2019-12-30
 	  </time>
 	</a> 
 
@@ -308,13 +308,7 @@
 		</span>
 		<span>
 			<i class="fa fa-tags"></i>
-			
-	
-		<a href="/tags/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/" class=" ">
-			软件安装
-		</a>
-	
-		
+					
 		</span>
 		
 		
@@ -324,7 +318,9 @@
 	</div>
 
 	<div class="article-content" id="article-content">
-		<h3 id="1-首先去官网安转对应环境下的版本"><a href="#1-首先去官网安转对应环境下的版本" class="headerlink" title="1.首先去官网安转对应环境下的版本"></a>1.首先去官网安转对应环境下的版本</h3><h5 id="点击跳转官网下载"><a href="#点击跳转官网下载" class="headerlink" title="点击跳转官网下载"></a><a href="http://code.visualstudio.com/docs" target="_blank" rel="noopener">点击跳转官网下载</a></h5><h3 id="2-如果需要设置中文"><a href="#2-如果需要设置中文" class="headerlink" title="2.如果需要设置中文"></a>2.如果需要设置中文</h3><h5 id="ctrl-shif-p-输入language-找到configure-display-language-输入框右边的recently-used点击它后安装第一个中文语言包"><a href="#ctrl-shif-p-输入language-找到configure-display-language-输入框右边的recently-used点击它后安装第一个中文语言包" class="headerlink" title="ctrl + shif + p 输入language 找到configure display language 输入框右边的recently used点击它后安装第一个中文语言包"></a>ctrl + shif + p 输入language 找到configure display language 输入框右边的recently used点击它后安装第一个中文语言包</h5>	
+		<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">// values 是个数组</span><br><span class="line"><span class="built_in">let</span> normalized = values.map((text)=&gt;&#123;</span><br><span class="line">    text.normalize();</span><br><span class="line">&#125;)</span><br><span class="line">normalized.sort((current, next)=&gt;&#123;</span><br><span class="line">    <span class="keyword">if</span>(current &lt; next)&#123;</span><br><span class="line">        <span class="built_in">return</span> -1</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(current === next)&#123;</span><br><span class="line">        <span class="built_in">return</span> 0</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="built_in">return</span> 1</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h5 id="检测u修饰符的支持-在老式js引擎浏览器中"><a href="#检测u修饰符的支持-在老式js引擎浏览器中" class="headerlink" title="检测u修饰符的支持(在老式js引擎浏览器中)"></a>检测u修饰符的支持(在老式js引擎浏览器中)</h5><p>``` bash<br>function hasRegExpU () {<br>    try {<br>        var pattern = new RegExp(‘.’,’u’)<br>        return true<br>    }catch(ex){<br>        return false<br>    }<br>}</p>
+	
 	</div>
 	
 	<div id="current-post-cover" data-scr="/img/cart_cover.jpg"></div>
@@ -342,12 +338,8 @@
 	<span>
 		<a href="javascript: window.scrollTo(0, 0);">返回顶部</a>
 		
-			<a href="/2019/12/30/%E5%AD%97%E7%AC%A6%E5%AF%B9%E6%AF%94/" title="字符对比" rel="prev">
-				&laquo;上一篇
-			</a>
 		
-		
-			<a href="/2019/12/19/js%E7%B2%BE%E5%BA%A6%E6%8D%9F%E5%A4%B1%E9%97%AE%E9%A2%98/" title="js精度损失问题" rel="next">
+			<a href="/2019/12/24/vscode%E5%AE%89%E8%A3%85/" title="vscode安装" rel="next">
 				下一篇&raquo;
 			</a>
 			
@@ -368,22 +360,22 @@
 			
 					<li>
 						<div class="relate-post-text">
-							<a class="relate-post-title" href="/2019/12/30/%E5%AD%97%E7%AC%A6%E5%AF%B9%E6%AF%94/" title="字符对比">
-								字符对比			
+							<a class="relate-post-title" href="/2019/12/24/vscode%E5%AE%89%E8%A3%85/" title="vscode安装">
+								vscode安装			
 							</a>
 							<p class="relate-post-date">
 								<i class="fa fa-calendar"></i>
-								十二月 30日, 2019				
+								十二月 24日, 2019				
 							</p>
 							<p class="relate-post-content">
-								12345678910111213// values 是个数组let normalized = values.map((text)=&gt;&#123;    text.normalize();&#125;)normalized.so...
+								1.首先去官网安转对应环境下的版本点击跳转官网下载2.如果需要设置中文ctrl + shif + p 输入language 找到configure display language 输入框右边的recently used点击它后安装第...
 							</p>
 						</div>
 
 						<div class="relate-post-cover">
-							<a href="/2019/12/30/%E5%AD%97%E7%AC%A6%E5%AF%B9%E6%AF%94/" title="字符对比">				
+							<a href="/2019/12/24/vscode%E5%AE%89%E8%A3%85/" title="vscode安装">				
 								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="字符对比"/>
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="vscode安装"/>
 							</a>
 						</div>
 					</li>											
