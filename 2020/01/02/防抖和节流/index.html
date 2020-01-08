@@ -299,7 +299,7 @@
 
 	<a href="/2020/01/02/%E9%98%B2%E6%8A%96%E5%92%8C%E8%8A%82%E6%B5%81/" itemprop="url">
 		<time datetime="2020-01-02T15:02:22.000Z" itemprop="dateUpdated">
-	  		2020-01-02
+	  		2020-01-08
 	  </time>
 	</a> 
 
@@ -324,8 +324,12 @@
 	</div>
 
 	<div class="article-content" id="article-content">
-		<h3 id="1-防抖-debounce"><a href="#1-防抖-debounce" class="headerlink" title="1 防抖 debounce"></a>1 防抖 debounce</h3><h5 id="debounce防抖-在事件被触发n秒后执行，如果在此时间再次触发事件，则重新开始计时。例如联想搜索"><a href="#debounce防抖-在事件被触发n秒后执行，如果在此时间再次触发事件，则重新开始计时。例如联想搜索" class="headerlink" title="debounce防抖 :在事件被触发n秒后执行，如果在此时间再次触发事件，则重新开始计时。例如联想搜索"></a>debounce防抖 :在事件被触发n秒后执行，如果在此时间再次触发事件，则重新开始计时。例如联想搜索</h5><figure class="highlight bash"><figcaption><span>html</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input <span class="built_in">type</span>=<span class="string">"text"</span> id=<span class="string">"phone"</span>&gt;</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><figcaption><span>js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"> // 需要触发的函数</span><br><span class="line">    <span class="keyword">function</span> debounce(d) &#123;</span><br><span class="line">        console.log(<span class="string">'输入完毕后联想搜索'</span>, d)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">let</span> inputDoc = document.getElementById(<span class="string">'phone'</span>)</span><br><span class="line">    // 输入触发的事件</span><br><span class="line">    <span class="keyword">function</span> getPhone(func, deplayTime) &#123;</span><br><span class="line">        <span class="built_in">let</span> timer;</span><br><span class="line">        <span class="built_in">return</span> (d) =&gt; &#123;</span><br><span class="line">            clearTimeout(timer)</span><br><span class="line">            timer = setTimeout(() =&gt; &#123;</span><br><span class="line">                func(d);</span><br><span class="line">                clearTimeout(timer)</span><br><span class="line">            &#125;, deplayTime)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">let</span> getPhoneDebounce = getPhone(debounce, 2000)</span><br><span class="line">    inputDoc.addEventListener(<span class="string">'keyup'</span>, (e) =&gt; &#123;</span><br><span class="line">        getPhoneDebounce(e.target.value)</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line"><span class="comment">### 1 节流 throttle</span></span><br><span class="line"><span class="comment">##### throttle节流:如果持续触发一个事件，在一定时间内只执行一次。例如重复点击</span></span><br><span class="line">``` bash html</span><br><span class="line">&lt;button id=<span class="string">"clickid"</span>&gt;节流&lt;/button&gt;</span><br></pre></td></tr></table></figure>
+		<h3 id="1-防抖-debounce"><a href="#1-防抖-debounce" class="headerlink" title="1 防抖 debounce"></a>1 防抖 debounce</h3><p>debounce防抖 :在事件被触发n秒后执行，如果在此时间再次触发事件，则重新开始计时。例如联想搜索 </p>
+<figure class="highlight bash"><figcaption><span>html</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input <span class="built_in">type</span>=<span class="string">"text"</span> id=<span class="string">"phone"</span>&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><figcaption><span>js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">// 需要触发的函数</span><br><span class="line">   <span class="keyword">function</span> debounce(d) &#123;</span><br><span class="line">       console.log(<span class="string">'输入完毕后联想搜索'</span>, d)</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="built_in">let</span> inputDoc = document.getElementById(<span class="string">'phone'</span>)</span><br><span class="line">   // 输入触发的事件</span><br><span class="line">   <span class="keyword">function</span> getPhone(func, deplayTime) &#123;</span><br><span class="line">       <span class="built_in">let</span> timer;</span><br><span class="line">       <span class="built_in">return</span> (d) =&gt; &#123;</span><br><span class="line">           clearTimeout(timer)</span><br><span class="line">           timer = setTimeout(() =&gt; &#123;</span><br><span class="line">               func(d);</span><br><span class="line">               clearTimeout(timer)</span><br><span class="line">           &#125;, deplayTime)</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="built_in">let</span> getPhoneDebounce = getPhone(debounce, 2000)</span><br><span class="line">   inputDoc.addEventListener(<span class="string">'keyup'</span>, (e) =&gt; &#123;</span><br><span class="line">       getPhoneDebounce(e.target.value)</span><br><span class="line">   &#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="2-节流-throttle"><a href="#2-节流-throttle" class="headerlink" title="2 节流 throttle"></a>2 节流 throttle</h3><p>throttle节流:如果持续触发一个事件，在一定时间内只执行一次。例如重复点击</p>
+<figure class="highlight bash"><figcaption><span>html</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;button id=<span class="string">"clickid"</span>&gt;节流&lt;/button&gt;</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight bash"><figcaption><span>js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">// 节流</span><br><span class="line">   <span class="keyword">function</span> <span class="function"><span class="title">throttle</span></span>() &#123;</span><br><span class="line">       console.log(<span class="string">'点击了'</span>)</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="built_in">let</span> clickidDoc = document.querySelector(<span class="string">'#clickid'</span>)</span><br><span class="line"></span><br><span class="line">   <span class="keyword">function</span> nextClick(func, deplayTime) &#123;</span><br><span class="line">       <span class="built_in">let</span> timer;</span><br><span class="line">       <span class="built_in">return</span> () =&gt; &#123;</span><br><span class="line">           // 定时器存在，无法点击</span><br><span class="line">           <span class="keyword">if</span> (timer) &#123;</span><br><span class="line">               console.log(<span class="string">'禁止点击了'</span>)</span><br><span class="line">           &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">               func();</span><br><span class="line">               timer = setTimeout(() =&gt; &#123;</span><br><span class="line">                   clearTimeout(timer)</span><br><span class="line">                   timer = null;</span><br><span class="line">               &#125;, deplayTime)</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">   &#125;</span><br><span class="line">   <span class="built_in">let</span> clickButton = nextClick(throttle, 200);</span><br><span class="line">   clickidDoc.addEventListener(<span class="string">'click'</span>, () =&gt; &#123;</span><br><span class="line">       clickButton()</span><br><span class="line">   &#125;)</span><br></pre></td></tr></table></figure>	
 	</div>
 	
@@ -343,6 +347,10 @@
 				
 	<span>
 		<a href="javascript: window.scrollTo(0, 0);">返回顶部</a>
+		
+			<a href="/2020/01/08/leetcode/" title="leetcode" rel="prev">
+				&laquo;上一篇
+			</a>
 		
 		
 			<a href="/2019/12/30/%E5%AD%97%E7%AC%A6%E5%AF%B9%E6%AF%94/" title="字符对比" rel="next">
@@ -382,6 +390,30 @@
 							<a href="/2019/12/19/js%E7%B2%BE%E5%BA%A6%E6%8D%9F%E5%A4%B1%E9%97%AE%E9%A2%98/" title="js精度损失问题">				
 								
 								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="js精度损失问题"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2020/01/08/leetcode/" title="leetcode">
+								leetcode			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								一月 8日, 2020				
+							</p>
+							<p class="relate-post-content">
+								1.leetcode –796旋转字符串有一字符串A： abcde 旋转一次变为 bcdea，如果旋转若干次A能变成B 返回true否则返回false
+js123var rotateString = function (A,B)&#1...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2020/01/08/leetcode/" title="leetcode">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="leetcode"/>
 							</a>
 						</div>
 					</li>											
@@ -571,32 +603,6 @@
 							<a href="/2019/12/04/newyearflags/" title="newyearflags">				
 								
 								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="newyearflags"/>
-							</a>
-						</div>
-					</li>											
-			
-			
-					<li>
-						<div class="relate-post-text">
-							<a class="relate-post-title" href="/2019/11/25/markdown/" title="开始博客第一次">
-								开始博客第一次			
-							</a>
-							<p class="relate-post-date">
-								<i class="fa fa-calendar"></i>
-								十一月 25日, 2019				
-							</p>
-							<p class="relate-post-content">
-								1.tags 具体是干啥的暂定tags：后面的是标签，就像是看书看到什么多少页了，标记下。就比如这个tags：markdown
-2.标题使用#号代表H标签一个*#号代表&lt;H 1—-5&gt;例如：
-h1h2h3h4h5h6
-3....
-							</p>
-						</div>
-
-						<div class="relate-post-cover">
-							<a href="/2019/11/25/markdown/" title="开始博客第一次">				
-								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="开始博客第一次"/>
 							</a>
 						</div>
 					</li>											
