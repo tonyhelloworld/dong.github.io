@@ -13,7 +13,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>
     
-      倒计时 | xuesong
+      观察者模式和发布订阅模式 | xuesong
     
   </title>
   <meta name="author" content="xuesong">
@@ -160,7 +160,7 @@
 	<!-- Page title -->
 	<p>
 		
-			当前文章&nbsp;:&nbsp;《倒计时》
+			当前文章&nbsp;:&nbsp;《观察者模式和发布订阅模式》
 		
 	</p>
 
@@ -265,8 +265,8 @@
 	<div class="article-title">
 		<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
 		
-	<a href="/2019/12/18/%E5%80%92%E8%AE%A1%E6%97%B6/" itemprop="url">
-		倒计时
+	<a href="/2020/03/23/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F%E5%92%8C%E5%8F%91%E5%B8%83%E8%AE%A2%E9%98%85%E6%A8%A1%E5%BC%8F/" itemprop="url">
+		观察者模式和发布订阅模式
 	</a>
 
 	</div>
@@ -279,9 +279,9 @@
 
 	发布于
 
-	<a href="/2019/12/18/%E5%80%92%E8%AE%A1%E6%97%B6/" itemprop="url">
-		<time datetime="2019-12-18T12:56:03.000Z" itemprop="datePublished">
-	  		2019-12-18
+	<a href="/2020/03/23/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F%E5%92%8C%E5%8F%91%E5%B8%83%E8%AE%A2%E9%98%85%E6%A8%A1%E5%BC%8F/" itemprop="url">
+		<time datetime="2020-03-23T02:42:32.000Z" itemprop="datePublished">
+	  		2020-03-23
 	  </time>
 	</a>
 	&nbsp;
@@ -297,9 +297,9 @@
 
 	更新于
 
-	<a href="/2019/12/18/%E5%80%92%E8%AE%A1%E6%97%B6/" itemprop="url">
-		<time datetime="2019-12-18T12:56:03.000Z" itemprop="dateUpdated">
-	  		2019-12-18
+	<a href="/2020/03/23/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F%E5%92%8C%E5%8F%91%E5%B8%83%E8%AE%A2%E9%98%85%E6%A8%A1%E5%BC%8F/" itemprop="url">
+		<time datetime="2020-03-23T02:42:32.000Z" itemprop="dateUpdated">
+	  		2020-03-23
 	  </time>
 	</a> 
 
@@ -310,8 +310,8 @@
 			<i class="fa fa-tags"></i>
 			
 	
-		<a href="/tags/Javascript/" class=" ">
-			Javascript
+		<a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class=" ">
+			设计模式
 		</a>
 	
 		
@@ -324,9 +324,12 @@
 	</div>
 
 	<div class="article-content" id="article-content">
-		<h3 id="工作中js倒计时"><a href="#工作中js倒计时" class="headerlink" title="工作中js倒计时"></a>工作中js倒计时</h3><h5 id="常用的倒计时，先设置开关标识，到时间后停止，需要注意的是是否重复点击，如果是设置禁止点击。此时注意是否是input标签如果是"><a href="#常用的倒计时，先设置开关标识，到时间后停止，需要注意的是是否重复点击，如果是设置禁止点击。此时注意是否是input标签如果是" class="headerlink" title="常用的倒计时，先设置开关标识，到时间后停止，需要注意的是是否重复点击，如果是设置禁止点击。此时注意是否是input标签如果是"></a>常用的倒计时，先设置开关标识，到时间后停止，需要注意的是是否重复点击，如果是设置禁止点击。此时注意是否是input标签如果是</h5><h5 id="则使用setAttribute-disable-否则操作css"><a href="#则使用setAttribute-disable-否则操作css" class="headerlink" title="则使用setAttribute = disable 否则操作css"></a>则使用setAttribute = disable 否则操作css</h5><figure class="highlight bash"><figcaption><span>div</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> &lt;div class=<span class="string">"code-input"</span> id=<span class="string">"code-input"</span>&gt;</span><br><span class="line">    &lt;input <span class="built_in">type</span>=<span class="string">"tel"</span> id=<span class="string">"codeId"</span> placeholder=<span class="string">"验证码"</span> oninput=<span class="string">"value=value.replace(/[^\d]/g,'')"</span> maxlength=<span class="string">"6"</span>&gt;</span><br><span class="line">    &lt;div href=<span class="string">"javascript:;"</span> id=<span class="string">"btn"</span> class=<span class="string">"code-button"</span>&gt;发送验证码&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><figcaption><span>js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">var oBtn = document.getElementById(<span class="string">'btn'</span>);</span><br><span class="line">oBtn.addEventListener(<span class="string">"click"</span>, <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">oBtn.style.pointerEvents = <span class="string">'none'</span>;</span><br><span class="line">var flag = <span class="literal">true</span>;</span><br><span class="line">    var time = 60</span><br><span class="line">    <span class="keyword">if</span> (flag) &#123;</span><br><span class="line">        flag = <span class="literal">false</span>;</span><br><span class="line">        oBtn.innerText = <span class="string">'已发送'</span>;</span><br><span class="line">        oBtn.style.backgroundImage = <span class="string">'linear-gradient( to right,#CDCDCD,#CDCDCD)'</span></span><br><span class="line">        var timer = setInterval(() =&gt; &#123;</span><br><span class="line">            time--;</span><br><span class="line">            oBtn.innerText = time + <span class="string">' s'</span>;</span><br><span class="line">            <span class="keyword">if</span> (time === 0) &#123;</span><br><span class="line">                clearInterval(timer);</span><br><span class="line">                oBtn.innerText = <span class="string">'重新获取'</span>;</span><br><span class="line">                oBtn.style.backgroundImage = <span class="string">'linear-gradient( to right, #17EAD9, #6078EA)'</span></span><br><span class="line">                oBtn.style.pointerEvents = <span class="string">'auto'</span></span><br><span class="line">                flag = <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;, 1000)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><figcaption><span>css</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">.code-input&#123;</span><br><span class="line">    display: flex;</span><br><span class="line">    justify-content: space-between</span><br><span class="line">&#125;</span><br><span class="line">.code-input input&#123;</span><br><span class="line">    border-bottom: 1px solid <span class="comment">#D9DCE9;</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">.code-input input::placeholder&#123;</span><br><span class="line">    color: rgb(217, 220, 233);</span><br><span class="line">    font-size: 0.307rem;</span><br><span class="line">&#125;</span><br><span class="line">.code-button&#123;</span><br><span class="line">    width: 2.893rem;</span><br><span class="line">    height: 1.067rem;</span><br><span class="line">    color: <span class="comment">#fff;</span></span><br><span class="line">    line-height: 1.067rem;</span><br><span class="line">    text-align: center;</span><br><span class="line">    background-image: linear-gradient( to right, <span class="comment">#17EAD9, #6078EA);</span></span><br><span class="line">    border-radius: .133rem;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>	
+		<h3 id="观察者模式和发布订阅模式"><a href="#观察者模式和发布订阅模式" class="headerlink" title="观察者模式和发布订阅模式"></a>观察者模式和发布订阅模式</h3><p>观察者模式：是指一个对象（subject）维持一个依赖列表Observer，当主题状态发生变化的时候，会通知观察者集合。发布和观察者都能看到对方都知道对方的存在。比如事件触发。<br>发布订阅模式：观察者和订阅者关联。发布消息发出到消息接收订阅者。需要通过第三方信息中介：观察者。所以有发布者 ，观察者，订阅者。发布者发布消息，订阅者不能直接收到消息需要经过观察者通知。比如消息队列</p>
+<p>然而在代码的世界里，没有代码解释，世界是苍白的。<br>所以</p>
+<h4 id="观察者模式"><a href="#观察者模式" class="headerlink" title="观察者模式"></a>观察者模式</h4><figure class="highlight bash"><figcaption><span>js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">var subject = &#123;</span><br><span class="line">    observers:[],</span><br><span class="line">    <span class="function"><span class="title">notify</span></span>()&#123;</span><br><span class="line">        this.observers.forEach(observer=&gt;&#123;</span><br><span class="line">            observer.update()</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;,</span><br><span class="line">    attch(observer)&#123;</span><br><span class="line">        this.observers.push(observer)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var observer = &#123;</span><br><span class="line">    <span class="function"><span class="title">update</span></span>()&#123;</span><br><span class="line">        console.log(<span class="string">'updated!!!'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">subject.attch(observer)</span><br><span class="line">subject.notify()</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">Subject</span></span>()&#123;</span><br><span class="line">    this.observers = []</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> Observer(name)&#123;</span><br><span class="line">    this.name = name</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Subject.prototype =&#123;</span><br><span class="line">    add: <span class="keyword">function</span>(observer)&#123;</span><br><span class="line">        this.observers.push(observer)</span><br><span class="line">    &#125;,</span><br><span class="line">    remove: <span class="keyword">function</span>(observer)&#123;</span><br><span class="line">        var o = this.observers</span><br><span class="line">        o.forEach(el=&gt;&#123;</span><br><span class="line">            <span class="keyword">if</span>(el === observe)&#123;</span><br><span class="line">                o.splice(el,1)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;,</span><br><span class="line">    notify: <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">        this.observers.forEach(o=&gt;&#123;</span><br><span class="line">            o.update()</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Observer.prototype =&#123;</span><br><span class="line">    update: <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">        console.log(<span class="string">'my name is '</span>+this.name)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var Sub = new Subject()</span><br><span class="line">var Obs = new Observer(<span class="string">'lxs'</span>)</span><br><span class="line"></span><br><span class="line">Sub.add(Obs)</span><br><span class="line">Sub.notify()</span><br></pre></td></tr></table></figure>
+
+<h3 id="发布订阅者模式"><a href="#发布订阅者模式" class="headerlink" title="发布订阅者模式"></a>发布订阅者模式</h3><figure class="highlight bash"><figcaption><span>js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">var publisher = &#123;</span><br><span class="line">    publish(pubsub)&#123;</span><br><span class="line">        pubsub.publish()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var pubsub = &#123;</span><br><span class="line">    subscribes:[],</span><br><span class="line">    <span class="function"><span class="title">publish</span></span>()&#123;</span><br><span class="line">        this.subscribes.forEach(subscribe=&gt;&#123;</span><br><span class="line">            subscribe.update()</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;,</span><br><span class="line">    subscribe(sub)&#123;</span><br><span class="line">        this.subscribes.push(sub)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">var subscribe = &#123;</span><br><span class="line">    <span class="function"><span class="title">update</span></span>()&#123;</span><br><span class="line">        console.log(<span class="string">'update!!!'</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    subscribe(pubsub) &#123;</span><br><span class="line">        pubsub.subscribe(this);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">subscribe.subscribe(pubsub)</span><br><span class="line">publisher.publish(pubsub)</span><br></pre></td></tr></table></figure>	
 	</div>
 	
 	<div id="current-post-cover" data-scr="/img/cart_cover.jpg"></div>
@@ -344,12 +347,8 @@
 	<span>
 		<a href="javascript: window.scrollTo(0, 0);">返回顶部</a>
 		
-			<a href="/2019/12/19/js%E7%B2%BE%E5%BA%A6%E6%8D%9F%E5%A4%B1%E9%97%AE%E9%A2%98/" title="js精度损失问题" rel="prev">
-				&laquo;上一篇
-			</a>
 		
-		
-			<a href="/2019/12/12/%E6%8A%98%E5%8F%A0%E6%95%88%E6%9E%9C/" title="折叠效果" rel="next">
+			<a href="/2020/03/21/vue%E8%AF%B7%E6%B1%82%E5%B0%81%E8%A3%85/" title="vue请求封装" rel="next">
 				下一篇&raquo;
 			</a>
 			
@@ -367,29 +366,6 @@
 <div class="relate-post">
 	
 		<ul>
-			
-					<li>
-						<div class="relate-post-text">
-							<a class="relate-post-title" href="/2020/03/23/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F%E5%92%8C%E5%8F%91%E5%B8%83%E8%AE%A2%E9%98%85%E6%A8%A1%E5%BC%8F/" title="观察者模式和发布订阅模式">
-								观察者模式和发布订阅模式			
-							</a>
-							<p class="relate-post-date">
-								<i class="fa fa-calendar"></i>
-								三月 23日, 2020				
-							</p>
-							<p class="relate-post-content">
-								观察者模式和发布订阅模式观察者模式：是指一个对象（subject）维持一个依赖列表Observer，当主题状态发生变化的时候，会通知观察者集合。发布和观察者都能看到对方都知道对方的存在。比如事件触发。发布订阅模式：观察者和订阅者关联。...
-							</p>
-						</div>
-
-						<div class="relate-post-cover">
-							<a href="/2020/03/23/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F%E5%92%8C%E5%8F%91%E5%B8%83%E8%AE%A2%E9%98%85%E6%A8%A1%E5%BC%8F/" title="观察者模式和发布订阅模式">				
-								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="观察者模式和发布订阅模式"/>
-							</a>
-						</div>
-					</li>											
-			
 			
 					<li>
 						<div class="relate-post-text">
@@ -596,6 +572,29 @@ js1234567...
 							<a href="/2019/12/19/js%E7%B2%BE%E5%BA%A6%E6%8D%9F%E5%A4%B1%E9%97%AE%E9%A2%98/" title="js精度损失问题">				
 								
 								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="js精度损失问题"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/12/18/%E5%80%92%E8%AE%A1%E6%97%B6/" title="倒计时">
+								倒计时			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十二月 18日, 2019				
+							</p>
+							<p class="relate-post-content">
+								工作中js倒计时常用的倒计时，先设置开关标识，到时间后停止，需要注意的是是否重复点击，如果是设置禁止点击。此时注意是否是input标签如果是则使用setAttribute = disable 否则操作cssdiv1234 &lt;di...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/12/18/%E5%80%92%E8%AE%A1%E6%97%B6/" title="倒计时">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="倒计时"/>
 							</a>
 						</div>
 					</li>											
