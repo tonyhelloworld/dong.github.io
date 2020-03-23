@@ -1,0 +1,891 @@
+<!--
+	作者：Sariay
+	时间：2018-09-25
+	描述：There may be a bug, but don't worry, QiLing(器灵) says that it can work normally!
+-->
+<!DOCTYPE html>
+<html class="html-loading">
+		
+
+<head>
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <title>
+    
+      vue请求封装 | xuesong
+    
+  </title>
+  <meta name="author" content="xuesong">
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+	<!-- favicon -->
+  <link rel="shortcut icon" href="/img/favicon.ico">
+
+  <!-- css -->
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/Annie.css">
+  
+  <!-- jquery -->
+	<script src="/js/jquery.min.js"></script>
+
+  <!-- leancloud -->
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+<script src="/js/leancloud.js"></script>
+</head>
+	<body>
+		<!-- Preloader -->
+
+	<div id="preloader">
+		<div class="pre-container">
+			
+				<div class="spinner">
+					<div class="double-bounce1"></div>
+					<div class="double-bounce2"></div>
+				</div>
+						
+		</div>
+	</div>
+
+
+<!-- header -->
+<header class="fixbackground" data-img-mode="random" data-normal-src="/" data-random-max="111" data-random-src="/img/random/">
+	<div class="mask">
+		<!-- Logo and navigation -->
+		<div class="h-header">
+			<div id="logo">
+				<a href="/">
+						
+						<img src="/img/logo.png" alt="Logo">
+					
+				</a>
+			</div>
+			
+			<div id="navigation-show">
+				<ul>
+	
+		<li class="menu-home">
+			<a href="/" class="menu-item-home">主页</a>
+		</li>
+	
+		<li class="menu-archive">
+			<a href="/archives" class="menu-item-archive">归档</a>
+		</li>
+	
+		<li class="menu-categories">
+			<a href="/categories" class="menu-item-categories">分类</a>
+		</li>
+	
+		<li class="menu-tags">
+			<a href="/tags" class="menu-item-tags">标签</a>
+		</li>
+	
+		<li class="menu-about">
+			<a href="/about" class="menu-item-about">关于</a>
+		</li>
+	
+		<li class="menu-gallery">
+			<a href="/gallery" class="menu-item-gallery">相册</a>
+		</li>
+	
+
+	
+</ul>
+			</div>				
+		</div>
+
+		<!-- motto -->
+		<div class="h-body">	
+			
+				<p class="motto"></p>
+			
+		</div>
+		
+		<!-- others: such as time... -->			
+		<div class="h-footer">
+			<a href="javascript:;" id="read-more"><i class="fa fa-angle-double-down" aria-hidden="true"></i>
+			</a>
+
+			
+				<!-- 
+	This is only a demo, please go to "https://time.is" to set your city time! 
+-->
+<style type="text/css">
+	.header-date {
+		font-size: 1.6rem;
+		color: #fff;
+		position: absolute;
+		bottom: 5px;
+		right: 1rem;
+		writing-mode: tb-rl;
+	}	
+	
+	.header-date a {
+		border-bottom: none;
+	}
+
+	@media only screen and (max-width: 768 ) {
+		.header-date {
+			font-size: 1rem;
+		}			
+	}
+</style>
+<div class="header-date">
+	<a href="https://time.is/Beijing" target="_blank" id="time_is_link" rel="nofollow noopener" ></a>
+	<span id="Beijing_z43d"></span>
+</div>
+<script src="//widget.time.is/zh.js"></script>
+<script>
+	time_is_widget.init({
+		Beijing_z43d:{
+			template:"DATE", 
+			date_format:"year年 monthname dnum日"
+		}
+	});
+</script>
+			
+		</div>
+	</div>
+</header>
+
+<div id="navigation-hide">
+	<!-- Progress bar -->
+	<div id="progress-bar"></div>
+
+	<!-- Progress percent -->
+	<div id="progress-percentage"><h1>0.0%</h1></div>
+
+	<div class="toc-switch"><span class="switch-button">目录</span></div>
+
+	<!-- Page title -->
+	<p>
+		
+			当前文章&nbsp;:&nbsp;《vue请求封装》
+		
+	</p>
+
+	<!-- Nav trigger for navigation-H-->
+	<a class="nav-trigger"><span></span></a>
+</div>
+
+<!-- Navigation in div(id="navigation-H") -->
+<nav class="nav-container" id="cd-nav">
+	<div class="nav-header">
+		<h3>Navigation</h3>
+		<a href="javascript:;" class="nav-close"></a>
+	</div>
+	<div class="nav-body">
+		<ul>
+	
+		<li class="menu-home">
+			<a href="/" class="menu-item-home">主页</a>
+		</li>
+	
+		<li class="menu-archive">
+			<a href="/archives" class="menu-item-archive">归档</a>
+		</li>
+	
+		<li class="menu-categories">
+			<a href="/categories" class="menu-item-categories">分类</a>
+		</li>
+	
+		<li class="menu-tags">
+			<a href="/tags" class="menu-item-tags">标签</a>
+		</li>
+	
+		<li class="menu-about">
+			<a href="/about" class="menu-item-about">关于</a>
+		</li>
+	
+		<li class="menu-gallery">
+			<a href="/gallery" class="menu-item-gallery">相册</a>
+		</li>
+	
+
+	
+</ul>
+	</div>
+	<div class="nav-footer">
+		<ul>
+	
+		<li>
+			<a href="https://github.com/xuesongcc" target="_blank">
+				<i class="fa fa-github"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="https://s.weibo.com" target="_blank">
+				<i class="fa fa-weibo"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://twitter.com/" target="_blank">
+				<i class="fa fa-twitter"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="https://github.com/xuesongcc" target="_blank">
+				<i class="fa fa-rss"></i>
+			</a>
+		</li>
+			
+</ul>
+
+	</div>
+</nav>
+			
+		<!--main-->
+		<main>
+			<!--
+	时间：2018-11-17
+	描述：
+		插件名称：katelog.min.js
+		插件作者：KELEN
+		插件来源: https://github.com/KELEN/katelog
+-->
+	 
+
+<div class="layout-post">
+	<div id="layout-post">
+	<div class="article-title">
+		<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+		
+	<a href="/2020/03/21/vue%E8%AF%B7%E6%B1%82%E5%B0%81%E8%A3%85/" itemprop="url">
+		vue请求封装
+	</a>
+
+	</div>
+
+	<div class="article-meta">
+		<span>
+			<i class="fa fa-calendar"></i>
+			
+
+
+	发布于
+
+	<a href="/2020/03/21/vue%E8%AF%B7%E6%B1%82%E5%B0%81%E8%A3%85/" itemprop="url">
+		<time datetime="2020-03-21T11:52:22.000Z" itemprop="datePublished">
+	  		2020-03-21
+	  </time>
+	</a>
+	&nbsp;
+
+
+
+
+
+			
+
+
+
+
+	更新于
+
+	<a href="/2020/03/21/vue%E8%AF%B7%E6%B1%82%E5%B0%81%E8%A3%85/" itemprop="url">
+		<time datetime="2020-03-21T11:52:22.000Z" itemprop="dateUpdated">
+	  		2020-03-23
+	  </time>
+	</a> 
+
+
+
+		</span>
+		<span>
+			<i class="fa fa-tags"></i>
+					
+		</span>
+		
+		
+
+
+
+	</div>
+
+	<div class="article-content" id="article-content">
+		<figure class="highlight bash"><figcaption><span>js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * axios 接口封装</span><br><span class="line"> * 版本：0.18.0</span><br><span class="line"> * 功能：</span><br><span class="line"> *    重发处理</span><br><span class="line"> *    拦截处理</span><br><span class="line"> * 注意：</span><br><span class="line"> *    接口调用自己 try catch</span><br><span class="line"> */</span><br><span class="line">import axios from <span class="string">'axios'</span></span><br><span class="line"></span><br><span class="line">const _axios = axios.create()</span><br><span class="line"></span><br><span class="line">// 基础配置</span><br><span class="line">_axios.defaults.timeout = 5 * 1000        // 请求超时</span><br><span class="line">_axios.defaults.retry = 2                 // 超时重发次数</span><br><span class="line">_axios.defaults.retryDelay = 1 * 1000     // 超时重发间隔</span><br><span class="line">_axios.defaults.withCredentials = <span class="literal">false</span>   // 请求头cookie携带</span><br><span class="line">_axios.defaults.crossDomain = <span class="literal">true</span>        // 跨域配置,本地开发仍需要做代理处理</span><br><span class="line">_axios.defaults.validateStatus = (status) =&gt; &#123;</span><br><span class="line">  <span class="built_in">return</span> status &gt;= 200 &amp;&amp; status &lt; 510</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 根据NODE_ENV配置设置不同环境的baseURL</span><br><span class="line"><span class="keyword">if</span> (process.env.NODE_ENV == <span class="string">'development'</span>) &#123;    </span><br><span class="line">  _axios.defaults.baseURL = <span class="string">''</span></span><br><span class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span> (process.env.NODE_ENV == <span class="string">'debug'</span>) &#123;    </span><br><span class="line">  _axios.defaults.baseURL = <span class="string">''</span></span><br><span class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span> (process.env.NODE_ENV == <span class="string">'production'</span>) &#123;    </span><br><span class="line">  _axios.defaults.baseURL = <span class="string">''</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 请求拦截器</span><br><span class="line">_axios.interceptors.request.use(</span><br><span class="line">  config =&gt; &#123;</span><br><span class="line">    const reqConfig = &#123; ...config &#125;</span><br><span class="line"></span><br><span class="line">    // 配置参数 容错处理 </span><br><span class="line">    <span class="keyword">if</span> (!reqConfig.url) &#123;</span><br><span class="line">      // 提示</span><br><span class="line">      console.error(<span class="string">'request need url'</span>)</span><br><span class="line">      throw new Error(&#123;</span><br><span class="line">        <span class="built_in">source</span>: <span class="string">'axiosInterceptors'</span>,</span><br><span class="line">        message: <span class="string">'请求地址为空'</span>,</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!reqConfig.method) &#123;</span><br><span class="line">      // 默认使用 get 请求</span><br><span class="line">      reqConfig.method = <span class="string">'get'</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 大小写容错</span><br><span class="line">    reqConfig.method = reqConfig.method.toLowerCase()</span><br><span class="line"></span><br><span class="line">    // 参数容错</span><br><span class="line">    <span class="keyword">if</span> (reqConfig.method === <span class="string">'get'</span>) &#123;</span><br><span class="line">      <span class="keyword">if</span> (!reqConfig.params) &#123;</span><br><span class="line">        // 防止字段用错</span><br><span class="line">        reqConfig.params = reqConfig.data || &#123;&#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (reqConfig.method === <span class="string">'post'</span>) &#123;</span><br><span class="line">      <span class="keyword">if</span> (!reqConfig.data) &#123;</span><br><span class="line">        // 防止字段用错</span><br><span class="line">        reqConfig.data = reqConfig.params || &#123;&#125;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      // 检测是否包含文件类型, 若包含则进行 formData 封装</span><br><span class="line">      <span class="built_in">let</span> hasFile = <span class="literal">false</span></span><br><span class="line">      Object.keys(reqConfig.data).forEach(key =&gt; &#123;</span><br><span class="line">        <span class="keyword">if</span> (typeof reqConfig.data[key] === <span class="string">'object'</span>) &#123;</span><br><span class="line">          const item = reqConfig.data[key]</span><br><span class="line">          <span class="keyword">if</span> (item instanceof FileList || item instanceof File || item instanceof Blob) &#123;</span><br><span class="line">            hasFile = <span class="literal">true</span></span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;)</span><br><span class="line"></span><br><span class="line">      // 检测到存在文件使用 FormData 提交数据</span><br><span class="line">      <span class="keyword">if</span> (hasFile) &#123;</span><br><span class="line">        const formData = new FormData()</span><br><span class="line">        Object.keys(reqConfig.data).forEach(key =&gt; &#123;</span><br><span class="line">          formData.append(key, reqConfig.data[key])</span><br><span class="line">        &#125;)</span><br><span class="line">        reqConfig.data = formData</span><br><span class="line">      &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      // TODO: 其他类型请求数据格式处理</span><br><span class="line">      console.warn(`其他请求类型: <span class="variable">$&#123;reqConfig.method&#125;</span>, 暂无自动处理`)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // auth 处理 请求头加token、cookieid</span><br><span class="line">    // TODO</span><br><span class="line"></span><br><span class="line">    // 如 双令牌刷新机制</span><br><span class="line">    <span class="keyword">if</span> (reqConfig.url === <span class="string">'api/v1/user/refresh'</span>) &#123;</span><br><span class="line">      // const refreshToken = getToken(<span class="string">'refresh_token'</span>)</span><br><span class="line">      const refreshToken =  undefined</span><br><span class="line">      <span class="keyword">if</span> (refreshToken) &#123;</span><br><span class="line">        reqConfig.headers.Authorization = refreshToken</span><br><span class="line">      &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      // access_token</span><br><span class="line">      // const accessToken = getToken(<span class="string">'access_token'</span>)</span><br><span class="line">      const accessToken =  undefined</span><br><span class="line">      <span class="keyword">if</span> (accessToken) &#123;</span><br><span class="line">        reqConfig.headers.Authorization = accessToken</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">return</span> reqConfig</span><br><span class="line">  &#125;,</span><br><span class="line">  error =&gt; &#123;</span><br><span class="line">    <span class="built_in">return</span> Promise.reject(error)</span><br><span class="line">  &#125;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">// 请求超时重发处理</span><br><span class="line"><span class="keyword">function</span> axiosTimeOutRetry(error) &#123;</span><br><span class="line">  const config = error.config</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span>(!config || !config.retry) &#123;</span><br><span class="line">    <span class="built_in">return</span> Promise.reject(error)</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  config.__retryCount = config.__retryCount || 0</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">if</span>(config.__retryCount &gt;= config.retry) &#123;</span><br><span class="line">      <span class="built_in">return</span> Promise.reject(error)</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  config.__retryCount += 1;</span><br><span class="line">  </span><br><span class="line">  var backoff = new Promise(<span class="keyword">function</span>(resolve) &#123;</span><br><span class="line">      setTimeout(<span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">          resolve()</span><br><span class="line">      &#125;, config.retryDelay || 1)</span><br><span class="line">  &#125;)</span><br><span class="line">  </span><br><span class="line">  <span class="built_in">return</span> backoff.then(<span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">      <span class="built_in">return</span> _axios(config)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 响应拦截</span><br><span class="line">_axios.interceptors.response.use(</span><br><span class="line">  res =&gt; &#123;</span><br><span class="line">    <span class="keyword">if</span> (res.status.toString().charAt(0) === <span class="string">'2'</span>) &#123;    </span><br><span class="line">      <span class="built_in">return</span> res.data</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">return</span> new Promise(async (resolve, reject) =&gt; &#123;</span><br><span class="line">      // status != 2xxx</span><br><span class="line">      // 异常处理逻辑 自己实现：重定向,重发,转发,提示</span><br><span class="line">      // TODO</span><br><span class="line"></span><br><span class="line">      <span class="built_in">let</span> &#123; errorCode, msg &#125; = res.data // 后端接口返回的json结构体</span><br><span class="line">      const &#123; params, url &#125; = res.config</span><br><span class="line"></span><br><span class="line">      // 如 特定状态码 处理</span><br><span class="line"></span><br><span class="line">      // 双令牌的机制业务</span><br><span class="line">      // refresh_token 异常，直接登出</span><br><span class="line">      <span class="keyword">if</span> (errorCode === 10101 || errorCode === 10102) &#123;</span><br><span class="line">        setTimeout(() =&gt; &#123;</span><br><span class="line">          store.dispatch(<span class="string">'loginOut'</span>)</span><br><span class="line">          const &#123; origin &#125; = window.location</span><br><span class="line">          window.location.href = origin</span><br><span class="line">        &#125;, 1500)</span><br><span class="line">        resolve(null)</span><br><span class="line">        <span class="built_in">return</span></span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      // 双令牌的刷新令牌操作(重发处理逻辑)</span><br><span class="line">      // 实现类似无感知令牌刷新, 让请求正常响应</span><br><span class="line">      <span class="keyword">if</span> (errorCode === 19001) &#123;</span><br><span class="line">        const cache = &#123;&#125;</span><br><span class="line">        <span class="keyword">if</span> (cache.url !== url) &#123;</span><br><span class="line">          const refreshResult = await _axios(<span class="string">'api/v1/user/refresh'</span>)</span><br><span class="line">          // save token 处理</span><br><span class="line">          // 用新的token, 将上次失败请求重发</span><br><span class="line">          const result = await _axios(res.config)</span><br><span class="line">          resolve(result)</span><br><span class="line">          <span class="built_in">return</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      // 弹出提示处理</span><br><span class="line">      // TODO</span><br><span class="line">      alert(<span class="string">'弹出提示'</span>)</span><br><span class="line"></span><br><span class="line">      reject()</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;,</span><br><span class="line">  error =&gt; &#123;</span><br><span class="line">    <span class="keyword">if</span> (!error.response) &#123;</span><br><span class="line">      console.error(error)</span><br><span class="line">    &#125;</span><br><span class="line">    // 判断请求超时</span><br><span class="line">    <span class="keyword">if</span> (error.code === <span class="string">'ECONNABORTED'</span> &amp;&amp; error.message.includes(<span class="string">'timeout'</span>)) &#123;</span><br><span class="line">      console.warn(<span class="string">'请求超时 重分处理'</span>)</span><br><span class="line">      axiosTimeOutRetry(error)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">return</span> Promise.reject(error)</span><br><span class="line">  &#125;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">// vue plugin扩展</span><br><span class="line">// 注入vue this属性里</span><br><span class="line">import Vue from <span class="string">'vue'</span></span><br><span class="line">Plugin.install = <span class="keyword">function</span>(Vue, options) &#123;</span><br><span class="line">  Vue.axios = _axios</span><br><span class="line">  window.axios = _axios</span><br><span class="line">  Object.defineProperties(Vue.prototype, &#123;</span><br><span class="line">    axios: &#123;</span><br><span class="line">      <span class="function"><span class="title">get</span></span>() &#123;</span><br><span class="line">        <span class="built_in">return</span> _axios</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="variable">$axios</span>: &#123;</span><br><span class="line">      <span class="function"><span class="title">get</span></span>() &#123;</span><br><span class="line">        <span class="built_in">return</span> _axios</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (!Vue.axios) &#123;</span><br><span class="line">  Vue.use(Plugin)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 导出常用函数</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * get请求</span><br><span class="line"> * @param &#123;string&#125; url 地址</span><br><span class="line"> * @param &#123;object&#125; params params参数</span><br><span class="line"> */</span><br><span class="line"><span class="built_in">export</span> <span class="keyword">function</span> get(url, params = &#123;&#125;) &#123;</span><br><span class="line">  <span class="built_in">return</span>  _axios(&#123;</span><br><span class="line">    method: <span class="string">'get'</span>,</span><br><span class="line">    url,</span><br><span class="line">    params</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * post请求</span><br><span class="line"> * @param &#123;string&#125; url 地址</span><br><span class="line"> * @param &#123;object&#125; data data参数</span><br><span class="line"> * @param &#123;object&#125; params params参数</span><br><span class="line"> */</span><br><span class="line"><span class="built_in">export</span> <span class="keyword">function</span> post(url, data = &#123;&#125;, params = &#123;&#125;) &#123;</span><br><span class="line">  <span class="built_in">return</span> _axios(&#123;</span><br><span class="line">    method: <span class="string">'post'</span>,</span><br><span class="line">    url,</span><br><span class="line">    data,</span><br><span class="line">    params</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * put请求</span><br><span class="line"> * @param &#123;string&#125; url 地址</span><br><span class="line"> * @param &#123;object&#125; data data参数</span><br><span class="line"> * @param &#123;object&#125; params params参数</span><br><span class="line"> */</span><br><span class="line"><span class="built_in">export</span> <span class="keyword">function</span> put(url, data = &#123;&#125;, params = &#123;&#125;) &#123;</span><br><span class="line">  <span class="built_in">return</span> _axios(&#123;</span><br><span class="line">    method: <span class="string">'put'</span>,</span><br><span class="line">    url,</span><br><span class="line">    params,</span><br><span class="line">    data</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * delete请求</span><br><span class="line"> * @param &#123;string&#125; url 地址</span><br><span class="line"> * @param &#123;object&#125; params 删除对象</span><br><span class="line"> */</span><br><span class="line"><span class="built_in">export</span> <span class="keyword">function</span> _delete(url, params = &#123;&#125;) &#123;</span><br><span class="line">  <span class="built_in">return</span> _axios(&#123;</span><br><span class="line">    method: <span class="string">'delete'</span>,</span><br><span class="line">    url,</span><br><span class="line">    params</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>	
+	</div>
+	
+	<div id="current-post-cover" data-scr="/img/cart_cover.jpg"></div>
+
+	<!-- relate post, comment...-->
+	<div class="investment-container">
+		<div class="investment-header">
+			<div class="investment-title-1">
+				<div class="on">相关文章</div>
+				<div>评论</div>
+				<div>分享</div>
+			</div>
+			<div class="investment-title-2">	            
+				
+	<span>
+		<a href="javascript: window.scrollTo(0, 0);">返回顶部</a>
+		
+		
+			<a href="/2020/03/20/%E9%9D%A2%E8%AF%95%E9%A2%98%E7%9B%AE/" title="面试题目" rel="next">
+				下一篇&raquo;
+			</a>
+			
+	</span>
+
+
+      		
+			</div>	
+		</div>
+		
+		<div class="investment-content">
+			<div class="investment-content-list">
+				
+
+<div class="relate-post">
+	
+		<ul>
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2020/03/20/%E9%9D%A2%E8%AF%95%E9%A2%98%E7%9B%AE/" title="面试题目">
+								面试题目			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								三月 20日, 2020				
+							</p>
+							<p class="relate-post-content">
+								vue-loader 的原理是什么
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2020/03/20/%E9%9D%A2%E8%AF%95%E9%A2%98%E7%9B%AE/" title="面试题目">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="面试题目"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2020/01/13/2019%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/" title="2019年终总结">
+								2019年终总结			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								一月 13日, 2020				
+							</p>
+							<p class="relate-post-content">
+								整体来说波折不断，时间很紧，规划的比较粗糙，心力突出分散，计划崩溃1.跳槽较多，浪费了很多时间和金钱。压缩了其他任务的时间2.冲突较多，心情烦躁多变。3.健身计划耽搁，目标120变140斤，然而还是原地踏步4.学习技能加深较慢，js基...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2020/01/13/2019%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/" title="2019年终总结">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="2019年终总结"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2020/01/09/%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%9A%84%E7%94%9F%E6%88%90/" title="随机数的生成">
+								随机数的生成			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								一月 9日, 2020				
+							</p>
+							<p class="relate-post-content">
+								没有指定范围生成 Math.floor(Math.random()*Number) 从0开始到Number，但不包含Number指定范围随机数的生成 Math.floor(Math.random()*(max-min+1)+min) ...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2020/01/09/%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%9A%84%E7%94%9F%E6%88%90/" title="随机数的生成">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="随机数的生成"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2020/01/08/leetcode/" title="leetcode">
+								leetcode			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								一月 8日, 2020				
+							</p>
+							<p class="relate-post-content">
+								1.第796题—旋转字符串有一字符串A： abcde 旋转一次变为 bcdea，如果旋转若干次A能变成B 返回true否则返回false
+js123var rotateString = function (A,B)&#123;    ...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2020/01/08/leetcode/" title="leetcode">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="leetcode"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2020/01/02/%E9%98%B2%E6%8A%96%E5%92%8C%E8%8A%82%E6%B5%81/" title="防抖和节流">
+								防抖和节流			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								一月 2日, 2020				
+							</p>
+							<p class="relate-post-content">
+								1 防抖 debouncedebounce防抖 :在事件被触发n秒后执行，如果在此时间再次触发事件，则重新开始计时。例如联想搜索 
+html1&lt;input type="text" id="phone"&gt;
+js1234567...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2020/01/02/%E9%98%B2%E6%8A%96%E5%92%8C%E8%8A%82%E6%B5%81/" title="防抖和节流">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="防抖和节流"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/12/30/%E5%AD%97%E7%AC%A6%E5%AF%B9%E6%AF%94/" title="字符对比">
+								字符对比			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十二月 30日, 2019				
+							</p>
+							<p class="relate-post-content">
+								12345678910111213// values 是个数组let normalized = values.map((text)=&gt;&#123;    text.normalize();&#125;)normalized.so...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/12/30/%E5%AD%97%E7%AC%A6%E5%AF%B9%E6%AF%94/" title="字符对比">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="字符对比"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/12/24/vscode%E5%AE%89%E8%A3%85/" title="vscode安装">
+								vscode安装			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十二月 24日, 2019				
+							</p>
+							<p class="relate-post-content">
+								1.首先去官网安转对应环境下的版本点击跳转官网下载2.如果需要设置中文ctrl + shif + p 输入language 找到configure display language 输入框右边的recently used点击它后安装第...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/12/24/vscode%E5%AE%89%E8%A3%85/" title="vscode安装">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="vscode安装"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/12/19/js%E7%B2%BE%E5%BA%A6%E6%8D%9F%E5%A4%B1%E9%97%AE%E9%A2%98/" title="js精度损失问题">
+								js精度损失问题			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十二月 19日, 2019				
+							</p>
+							<p class="relate-post-content">
+								所有计算机编程语言里浮点数计算会存在精度丢失问题（或称舍入误差），其根本原因是二进制和实现位数限制有些数无法有限表示在我的前端工作中，整数的运算很少出现精度损失的问题，除非超过Math.pow(2,53)的超大整数，但是在电商项目中，...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/12/19/js%E7%B2%BE%E5%BA%A6%E6%8D%9F%E5%A4%B1%E9%97%AE%E9%A2%98/" title="js精度损失问题">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="js精度损失问题"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/12/18/%E5%80%92%E8%AE%A1%E6%97%B6/" title="倒计时">
+								倒计时			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十二月 18日, 2019				
+							</p>
+							<p class="relate-post-content">
+								工作中js倒计时常用的倒计时，先设置开关标识，到时间后停止，需要注意的是是否重复点击，如果是设置禁止点击。此时注意是否是input标签如果是则使用setAttribute = disable 否则操作cssdiv1234 &lt;di...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/12/18/%E5%80%92%E8%AE%A1%E6%97%B6/" title="倒计时">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="倒计时"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/12/12/%E6%8A%98%E5%8F%A0%E6%95%88%E6%9E%9C/" title="折叠效果">
+								折叠效果			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十二月 12日, 2019				
+							</p>
+							<p class="relate-post-content">
+								折叠效果功能实现– vuediv12&lt;div v-for="item in showList"&gt;&lt;div&gt;&lt;div @click="showAll = !showAll"&gt;&#123;&#123;w...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/12/12/%E6%8A%98%E5%8F%A0%E6%95%88%E6%9E%9C/" title="折叠效果">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="折叠效果"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+		</ul>
+	
+</div>	
+			</div>
+			<div class="investment-content-list">
+				<div class="layout-comment">
+
+	
+
+		
+
+			<!-- I don't know !!!-->
+			<div>Please check the comment setting in config.yml of hexo-theme-Annie!</div>
+			
+		
+		
+	
+
+</div>
+			</div>
+			<div class="investment-content-list">
+				<div class="layout-share">
+	
+	
+
+		
+			
+			<!-- socialShare share -->
+			<div class="social-share"></div>
+
+<!--  css & js -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+			
+		
+		
+	
+</div>
+
+
+			</div>
+		</div>	
+	</div>
+	</div>
+</div>
+
+
+
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+
+
+	
+
+
+<!-- show math formula -->
+
+
+
+	 
+	<script src="/plugin/clipboard/clipboard.js"></script>
+	<script>
+		// Copy code !
+	    function codePreprocessing() {
+	        $("#article-content .highlight").each(function() {
+
+	            $(this).wrap('<div id="post-code"></div>');
+
+	        })
+
+	        $("#article-content #post-code").each(function() {
+
+	            $(this).prepend('<nav class="copy-nav"><span><i class="code-language"></i></span></nav>');
+
+	        })
+
+	        $("#article-content .copy-nav").each(function() {
+	            var temp = $(this).next().attr('class'),
+	                language = ((temp.length > 9) && (temp != null)) ? temp.substr(10) : "none"; //why 9? Need to check language?
+
+	            $(this).find('.code-language').text(language);
+
+	            $(this).append('<span class="copy-btn"><i class="fa fa-copy" aria-hidden="true"></i></span>');
+
+	        });
+	    }
+
+		function codeCopy() {
+		    $('#article-content #post-code').each(function(i) {
+		        var codeCopyId = 'codeCopy-' + i;
+
+		        var codeNode = $(this).find('.code'),
+		            copyButton = $(this).find('.copy-btn');
+
+		        codeNode.attr('id', codeCopyId);
+		        copyButton.attr('data-clipboard-target-id', codeCopyId);
+		    })
+
+		    
+			var clipboard = new ClipboardJS('.copy-btn', {
+					target: function(trigger) {
+						return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
+					}
+		      	});
+
+			//pure js
+			function showTooltip(elem, msg) {		   
+				elem.setAttribute('aria-label', msg);
+				elem.setAttribute('class', 'copy-btn copy-status');
+				setTimeout(function() {
+					elem.setAttribute('class', 'copy-btn');
+				}, 2000);
+			}
+
+			clipboard.on('success', function(e) {
+			    e.clearSelection();
+			    console.info('Action:', e.action);		   
+			    console.info('Trigger:', e.trigger);
+			    showTooltip(e.trigger, 'Copied!');
+			    
+			});
+			clipboard.on('error', function(e) {
+			    console.error('Action:', e.action);
+			    console.error('Trigger:', e.trigger);
+			});
+		
+
+		}
+
+		if ($('.layout-post').length) {
+		    codePreprocessing();
+		    codeCopy();
+		} 
+	</script>
+
+
+
+
+
+<link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+<script src="/plugin/fancybox/jquery.fancybox.js"></script>
+
+<script type="text/javascript">
+	var titleID = $('.article-title a'),
+		imageID = $('.article-content img'),
+		videoID = $('.article-content video');
+
+	var postTitle = titleID.text() ? titleID.text() : "No post title!";
+
+	imageID.each(function() {
+		var imgPath = $(this).attr('src'),
+			imgTitle = $(this).attr('alt') ? $(this).attr('alt') : "No image description!";
+
+		//给每个匹配的<img>元素打包, 即添加父元素<a>
+		$(this).wrap('<a data-fancybox="gallery" data-caption=" 《 ' + postTitle + ' 》 ' + imgTitle + ' "  href=" ' + imgPath + ' "> </a>');
+	});
+
+	videoID.each(function() {
+		var videoPath = $(this).attr('src');
+
+		//给每个匹配的<img>元素打包, 即添加父元素<a>
+		$(this).wrap('<a data-fancybox href=" ' + videoPath + ' "> </a>');
+	});
+	//TODO：支持html5 video
+
+	if($('#layout-post').length) {
+		$('[data-fancybox="gallery"]').fancybox({
+			loop: true,
+			buttons: [
+				"zoom",
+				"share",
+				"slideShow",
+				"fullScreen",
+				//"download",
+				"thumbs",
+				"close"
+			],
+			protect: false
+		});
+	}
+</script>
+		</main>
+
+		<!--footer-->
+		<footer>
+	<div class="social">
+		<ul>
+	
+		<li>
+			<a href="https://github.com/xuesongcc" target="_blank">
+				<i class="fa fa-github"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="https://s.weibo.com" target="_blank">
+				<i class="fa fa-weibo"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://twitter.com/" target="_blank">
+				<i class="fa fa-twitter"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="https://github.com/xuesongcc" target="_blank">
+				<i class="fa fa-rss"></i>
+			</a>
+		</li>
+			
+</ul>
+
+	</div>
+		
+	<div class="copyright">
+		<p>
+			 
+				&copy;2017 - 2020, content by xuesong. All Rights Reserved.
+			
+			
+			
+
+	<!-- busuanzi -->
+	<!-- busuanzi -->
+
+		
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	
+
+		<span id="busuanzi_container_page_pv">
+	  		本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+		</span>
+
+	
+
+
+
+
+		</p>
+		<p>
+			<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.
+			<a href="javascript:zh_tran('s');" class="zh_click" id="zh_click_s">简体</a> 
+			<a href="javascript:zh_tran('t');" class="zh_click" id="zh_click_t">繁體</a>				
+		</p>
+	</div>		
+</footer>
+		
+	<!-- set '1' to show motto in all pages! -->
+
+	<script src="/plugin/motto/motto.js"></script>
+	
+	<script type="text/javascript">
+		$(".motto").html( getMingYanContent() );
+	</script>	
+
+
+
+
+
+<!-- love effect -->
+
+
+<!-- back to top -->
+
+	
+	<div id="totop">
+  		<a href="javascript:;"  name="TOTOP" class="fa fa-arrow-up" ></a>
+	</div>
+
+
+
+
+<!-- site analysis -->
+
+
+	<!-- site-analysis -->
+	
+
+	
+	
+	
+	
+ 
+
+<script src="/plugin/vibrant/vibrant.js"></script>
+<script src="/plugin/chinese/chinese.js"></script>
+<script src="/plugin/imgLazyLoader/yall.min.js"></script>
+<script src="/plugin/imgResize/jquery.resizeimagetoparent.min.js"></script>
+<script src="/plugin/nicescroll/jquery.nicescroll.js"></script>
+<script src="/js/resizediv.js"></script>
+<script src="/js/main.js"></script>
+	</body>	
+</html>
+<script type="text/javascript" src="/js/click_show_text.js"></script>

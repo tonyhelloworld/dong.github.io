@@ -13,7 +13,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>
     
-      leetcode | xuesong
+      面试题目 | xuesong
     
   </title>
   <meta name="author" content="xuesong">
@@ -160,7 +160,7 @@
 	<!-- Page title -->
 	<p>
 		
-			当前文章&nbsp;:&nbsp;《leetcode》
+			当前文章&nbsp;:&nbsp;《面试题目》
 		
 	</p>
 
@@ -265,8 +265,8 @@
 	<div class="article-title">
 		<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
 		
-	<a href="/2020/01/08/leetcode/" itemprop="url">
-		leetcode
+	<a href="/2020/03/20/%E9%9D%A2%E8%AF%95%E9%A2%98%E7%9B%AE/" itemprop="url">
+		面试题目
 	</a>
 
 	</div>
@@ -279,9 +279,9 @@
 
 	发布于
 
-	<a href="/2020/01/08/leetcode/" itemprop="url">
-		<time datetime="2020-01-08T08:18:25.000Z" itemprop="datePublished">
-	  		2020-01-08
+	<a href="/2020/03/20/%E9%9D%A2%E8%AF%95%E9%A2%98%E7%9B%AE/" itemprop="url">
+		<time datetime="2020-03-20T05:31:41.000Z" itemprop="datePublished">
+	  		2020-03-20
 	  </time>
 	</a>
 	&nbsp;
@@ -297,9 +297,9 @@
 
 	更新于
 
-	<a href="/2020/01/08/leetcode/" itemprop="url">
-		<time datetime="2020-01-08T08:18:25.000Z" itemprop="dateUpdated">
-	  		2020-01-09
+	<a href="/2020/03/20/%E9%9D%A2%E8%AF%95%E9%A2%98%E7%9B%AE/" itemprop="url">
+		<time datetime="2020-03-20T05:31:41.000Z" itemprop="dateUpdated">
+	  		2020-03-20
 	  </time>
 	</a> 
 
@@ -308,7 +308,13 @@
 		</span>
 		<span>
 			<i class="fa fa-tags"></i>
-					
+			
+	
+		<a href="/tags/%E9%9D%A2%E8%AF%95/" class=" ">
+			面试
+		</a>
+	
+		
 		</span>
 		
 		
@@ -318,12 +324,7 @@
 	</div>
 
 	<div class="article-content" id="article-content">
-		<h3 id="1-第796题—旋转字符串"><a href="#1-第796题—旋转字符串" class="headerlink" title="1.第796题—旋转字符串"></a>1.第796题—旋转字符串</h3><p>有一字符串A： abcde 旋转一次变为 bcdea，如果旋转若干次A能变成B 返回true否则返回false</p>
-<figure class="highlight bash"><figcaption><span>js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var rotateString = <span class="keyword">function</span> (A,B)&#123;</span><br><span class="line">    <span class="built_in">return</span> (A.length === B.length) &amp;&amp; (A + A).includes(B)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="2-第804题—唯一摩尔斯密码词"><a href="#2-第804题—唯一摩尔斯密码词" class="headerlink" title="2.第804题—唯一摩尔斯密码词"></a>2.第804题—唯一摩尔斯密码词</h3><p>国际莫尔斯密码定义一种标准编码方式：为了方便定义了所有26个字母的编码方式<br>[“.-“,”-…”,”-.-.”,”-..”,”.”,”..-.”,”–.”,”….”,”..”,”.—“,”-.-“,”.-..”,”–”,”-.”,”—“,”.–.”,”–.-“,”.-.”,”…”,”-“,”..-“,”…-“,”.–”,”-..-“,”-.–”,”–..”]</p>
-<h5 id=""><a href="#" class="headerlink" title=""></a></h5><p><em>例如:</em><br><em>输入: words = [“gin”, “zen”, “gig”, “msg”]</em><br><em>输出: 2</em><br><em>解释:</em><br><em>各单词翻译如下:</em><br>*”gin” -&gt; “–…-.”*<br><em>]</em>“zen” -&gt; “–…-.”*<br>*”gig” -&gt; “–…–.”*<br>*”msg” -&gt; “–…–.”*</p>
-<p><strong>共有 2 种不同翻译, “–…-.” 和 “–…–.”.</strong></p>
-<figure class="highlight bash"><figcaption><span>js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var uniqueMorseRepresentations = <span class="keyword">function</span>(words) &#123;</span><br><span class="line">    <span class="built_in">let</span> sets = new Set()</span><br><span class="line">    const list = [<span class="string">".-"</span>,<span class="string">"-..."</span>,<span class="string">"-.-."</span>,<span class="string">"-.."</span>,<span class="string">"."</span>,<span class="string">"..-."</span>,<span class="string">"--."</span>,<span class="string">"...."</span>,<span class="string">".."</span>,<span class="string">".---"</span>,<span class="string">"-.-"</span>,<span class="string">".-.."</span>,<span class="string">"--"</span>,<span class="string">"-."</span>,<span class="string">"---"</span>,<span class="string">".--."</span>,<span class="string">"--.-"</span>,<span class="string">".-."</span>,<span class="string">"..."</span>,<span class="string">"-"</span>,<span class="string">"..-"</span>,<span class="string">"...-"</span>,<span class="string">".--"</span>,<span class="string">"-..-"</span>,<span class="string">"-.--"</span>,<span class="string">"--.."</span>]</span><br><span class="line">    words.forEach(el=&gt;&#123;</span><br><span class="line">        <span class="built_in">let</span> a = <span class="string">''</span>;</span><br><span class="line">        el.split(<span class="string">''</span>).forEach(el=&gt;&#123;</span><br><span class="line">            a = a + list[el.charCodeAt() - <span class="string">'a'</span>.charCodeAt()]</span><br><span class="line">        &#125;)</span><br><span class="line">        sets.add(a)</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="built_in">return</span> sets.size</span><br><span class="line">&#125;;</span><br><span class="line">console.log(uniqueMorseRepresentations([<span class="string">"gin"</span>, <span class="string">"zen"</span>, <span class="string">"gig"</span>, <span class="string">"msg"</span>]))</span><br></pre></td></tr></table></figure>	
+		<h3 id="vue-loader-的原理是什么"><a href="#vue-loader-的原理是什么" class="headerlink" title="vue-loader 的原理是什么"></a>vue-loader 的原理是什么</h3>	
 	</div>
 	
 	<div id="current-post-cover" data-scr="/img/cart_cover.jpg"></div>
@@ -341,12 +342,12 @@
 	<span>
 		<a href="javascript: window.scrollTo(0, 0);">返回顶部</a>
 		
-			<a href="/2020/01/09/%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%9A%84%E7%94%9F%E6%88%90/" title="随机数的生成" rel="prev">
+			<a href="/2020/03/21/vue%E8%AF%B7%E6%B1%82%E5%B0%81%E8%A3%85/" title="vue请求封装" rel="prev">
 				&laquo;上一篇
 			</a>
 		
 		
-			<a href="/2020/01/02/%E9%98%B2%E6%8A%96%E5%92%8C%E8%8A%82%E6%B5%81/" title="防抖和节流" rel="next">
+			<a href="/2020/01/13/2019%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/" title="2019年终总结" rel="next">
 				下一篇&raquo;
 			</a>
 			
@@ -383,29 +384,6 @@
 							<a href="/2020/03/21/vue%E8%AF%B7%E6%B1%82%E5%B0%81%E8%A3%85/" title="vue请求封装">				
 								
 								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="vue请求封装"/>
-							</a>
-						</div>
-					</li>											
-			
-			
-					<li>
-						<div class="relate-post-text">
-							<a class="relate-post-title" href="/2020/03/20/%E9%9D%A2%E8%AF%95%E9%A2%98%E7%9B%AE/" title="面试题目">
-								面试题目			
-							</a>
-							<p class="relate-post-date">
-								<i class="fa fa-calendar"></i>
-								三月 20日, 2020				
-							</p>
-							<p class="relate-post-content">
-								vue-loader 的原理是什么
-							</p>
-						</div>
-
-						<div class="relate-post-cover">
-							<a href="/2020/03/20/%E9%9D%A2%E8%AF%95%E9%A2%98%E7%9B%AE/" title="面试题目">				
-								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="面试题目"/>
 							</a>
 						</div>
 					</li>											
@@ -452,6 +430,30 @@
 							<a href="/2020/01/09/%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%9A%84%E7%94%9F%E6%88%90/" title="随机数的生成">				
 								
 								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="随机数的生成"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2020/01/08/leetcode/" title="leetcode">
+								leetcode			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								一月 8日, 2020				
+							</p>
+							<p class="relate-post-content">
+								1.第796题—旋转字符串有一字符串A： abcde 旋转一次变为 bcdea，如果旋转若干次A能变成B 返回true否则返回false
+js123var rotateString = function (A,B)&#123;    ...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2020/01/08/leetcode/" title="leetcode">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="leetcode"/>
 							</a>
 						</div>
 					</li>											
