@@ -1,0 +1,990 @@
+<!--
+	作者：Sariay
+	时间：2018-09-25
+	描述：There may be a bug, but don't worry, QiLing(器灵) says that it can work normally!
+-->
+<!DOCTYPE html>
+<html class="html-loading">
+		
+
+<head>
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <title>
+    
+      校验工具类函数 | xuesong
+    
+  </title>
+  <meta name="author" content="xuesong">
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+	<!-- favicon -->
+  <link rel="shortcut icon" href="/img/favicon.ico">
+
+  <!-- css -->
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/Annie.css">
+  
+  <!-- jquery -->
+	<script src="/js/jquery.min.js"></script>
+
+  <!-- leancloud -->
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+<script src="/js/leancloud.js"></script>
+</head>
+	<body>
+		<!-- Preloader -->
+
+	<div id="preloader">
+		<div class="pre-container">
+			
+				<div class="spinner">
+					<div class="double-bounce1"></div>
+					<div class="double-bounce2"></div>
+				</div>
+						
+		</div>
+	</div>
+
+
+<!-- header -->
+<header class="fixbackground" data-img-mode="random" data-normal-src="/" data-random-max="111" data-random-src="/img/random/">
+	<div class="mask">
+		<!-- Logo and navigation -->
+		<div class="h-header">
+			<div id="logo">
+				<a href="/">
+						
+						<img src="/img/logo.png" alt="Logo">
+					
+				</a>
+			</div>
+			
+			<div id="navigation-show">
+				<ul>
+	
+		<li class="menu-home">
+			<a href="/" class="menu-item-home">主页</a>
+		</li>
+	
+		<li class="menu-archive">
+			<a href="/archives" class="menu-item-archive">归档</a>
+		</li>
+	
+		<li class="menu-categories">
+			<a href="/categories" class="menu-item-categories">分类</a>
+		</li>
+	
+		<li class="menu-tags">
+			<a href="/tags" class="menu-item-tags">标签</a>
+		</li>
+	
+		<li class="menu-about">
+			<a href="/about" class="menu-item-about">关于</a>
+		</li>
+	
+		<li class="menu-gallery">
+			<a href="/gallery" class="menu-item-gallery">相册</a>
+		</li>
+	
+
+	
+</ul>
+			</div>				
+		</div>
+
+		<!-- motto -->
+		<div class="h-body">	
+			
+				<p class="motto"></p>
+			
+		</div>
+		
+		<!-- others: such as time... -->			
+		<div class="h-footer">
+			<a href="javascript:;" id="read-more"><i class="fa fa-angle-double-down" aria-hidden="true"></i>
+			</a>
+
+			
+				<!-- 
+	This is only a demo, please go to "https://time.is" to set your city time! 
+-->
+<style type="text/css">
+	.header-date {
+		font-size: 1.6rem;
+		color: #fff;
+		position: absolute;
+		bottom: 5px;
+		right: 1rem;
+		writing-mode: tb-rl;
+	}	
+	
+	.header-date a {
+		border-bottom: none;
+	}
+
+	@media only screen and (max-width: 768 ) {
+		.header-date {
+			font-size: 1rem;
+		}			
+	}
+</style>
+<div class="header-date">
+	<a href="https://time.is/Beijing" target="_blank" id="time_is_link" rel="nofollow noopener" ></a>
+	<span id="Beijing_z43d"></span>
+</div>
+<script src="//widget.time.is/zh.js"></script>
+<script>
+	time_is_widget.init({
+		Beijing_z43d:{
+			template:"DATE", 
+			date_format:"year年 monthname dnum日"
+		}
+	});
+</script>
+			
+		</div>
+	</div>
+</header>
+
+<div id="navigation-hide">
+	<!-- Progress bar -->
+	<div id="progress-bar"></div>
+
+	<!-- Progress percent -->
+	<div id="progress-percentage"><h1>0.0%</h1></div>
+
+	<div class="toc-switch"><span class="switch-button">目录</span></div>
+
+	<!-- Page title -->
+	<p>
+		
+			当前文章&nbsp;:&nbsp;《校验工具类函数》
+		
+	</p>
+
+	<!-- Nav trigger for navigation-H-->
+	<a class="nav-trigger"><span></span></a>
+</div>
+
+<!-- Navigation in div(id="navigation-H") -->
+<nav class="nav-container" id="cd-nav">
+	<div class="nav-header">
+		<h3>Navigation</h3>
+		<a href="javascript:;" class="nav-close"></a>
+	</div>
+	<div class="nav-body">
+		<ul>
+	
+		<li class="menu-home">
+			<a href="/" class="menu-item-home">主页</a>
+		</li>
+	
+		<li class="menu-archive">
+			<a href="/archives" class="menu-item-archive">归档</a>
+		</li>
+	
+		<li class="menu-categories">
+			<a href="/categories" class="menu-item-categories">分类</a>
+		</li>
+	
+		<li class="menu-tags">
+			<a href="/tags" class="menu-item-tags">标签</a>
+		</li>
+	
+		<li class="menu-about">
+			<a href="/about" class="menu-item-about">关于</a>
+		</li>
+	
+		<li class="menu-gallery">
+			<a href="/gallery" class="menu-item-gallery">相册</a>
+		</li>
+	
+
+	
+</ul>
+	</div>
+	<div class="nav-footer">
+		<ul>
+	
+		<li>
+			<a href="https://github.com/xuesongcc" target="_blank">
+				<i class="fa fa-github"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="https://s.weibo.com" target="_blank">
+				<i class="fa fa-weibo"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://twitter.com/" target="_blank">
+				<i class="fa fa-twitter"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="https://github.com/xuesongcc" target="_blank">
+				<i class="fa fa-rss"></i>
+			</a>
+		</li>
+			
+</ul>
+
+	</div>
+</nav>
+			
+		<!--main-->
+		<main>
+			<!--
+	时间：2018-11-17
+	描述：
+		插件名称：katelog.min.js
+		插件作者：KELEN
+		插件来源: https://github.com/KELEN/katelog
+-->
+
+	
+		<div class="layout-toc">
+			<div id="layout-toc">
+				<div class="k-catelog-list" id="catelog-list" data-title="文章目录"></div>
+			</div>
+		</div>
+
+		
+		<script src="/plugin/toc/katelog.min.js"></script>
+
+		
+	 
+
+<div class="layout-post">
+	<div id="layout-post">
+	<div class="article-title">
+		<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+		
+	<a href="/2020/03/23/%E6%A0%A1%E9%AA%8C%E5%B7%A5%E5%85%B7%E7%B1%BB%E5%87%BD%E6%95%B0/" itemprop="url">
+		校验工具类函数
+	</a>
+
+	</div>
+
+	<div class="article-meta">
+		<span>
+			<i class="fa fa-calendar"></i>
+			
+
+
+	发布于
+
+	<a href="/2020/03/23/%E6%A0%A1%E9%AA%8C%E5%B7%A5%E5%85%B7%E7%B1%BB%E5%87%BD%E6%95%B0/" itemprop="url">
+		<time datetime="2020-03-23T04:13:14.000Z" itemprop="datePublished">
+	  		2020-03-23
+	  </time>
+	</a>
+	&nbsp;
+
+
+
+
+
+			
+
+
+
+
+	更新于
+
+	<a href="/2020/03/23/%E6%A0%A1%E9%AA%8C%E5%B7%A5%E5%85%B7%E7%B1%BB%E5%87%BD%E6%95%B0/" itemprop="url">
+		<time datetime="2020-03-23T04:13:14.000Z" itemprop="dateUpdated">
+	  		2020-03-25
+	  </time>
+	</a> 
+
+
+
+		</span>
+		<span>
+			<i class="fa fa-tags"></i>
+					
+		</span>
+		
+		
+
+
+
+	</div>
+
+	<div class="article-content" id="article-content">
+		<h3 id="验证邮政编码"><a href="#验证邮政编码" class="headerlink" title="验证邮政编码"></a>验证邮政编码</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @param &#123; string &#125; value</span><br><span class="line"> */</span><br><span class="line"><span class="built_in">export</span> const isPostcode = value =&gt; /^(0[1-7]|1[0-356]|2[0-7]|3[0-6]|4[0-7]|5[1-7]|6[1-7]|7[0-5]|8[013-6])\d&#123;4&#125;$/g.test(value);</span><br></pre></td></tr></table></figure>
+<h3 id="验证中文和数字"><a href="#验证中文和数字" class="headerlink" title="验证中文和数字"></a>验证中文和数字</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @param &#123; string &#125; value</span><br><span class="line"> */</span><br><span class="line"><span class="built_in">export</span> const isCHNAndEN = value =&gt; /^((?:[\u3400-\u4DB5\u4E00-\u9FEA\uFA0E\uFA0F\uFA11\uFA13\uFA14\uFA1F\uFA21\uFA23\uFA24\uFA27-\uFA29]|[\uD840-\uD868\uD86A-\uD86C\uD86F-\uD872\uD874-\uD879][\uDC00-\uDFFF]|\uD869[\uDC00-\uDED6\uDF00-\uDFFF]|\uD86D[\uDC00-\uDF34\uDF40-\uDFFF]|\uD86E[\uDC00-\uDC1D\uDC20-\uDFFF]|\uD873[\uDC00-\uDEA1\uDEB0-\uDFFF]|\uD87A[\uDC00-\uDFE0])|(\d))+$/g.test(value);</span><br></pre></td></tr></table></figure>
+
+<h3 id="验证火车车次"><a href="#验证火车车次" class="headerlink" title="验证火车车次"></a>验证火车车次</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> const isTrainNum = value =&gt; /^[GCDZTSPKXLY1-9]\d&#123;1,4&#125;$/g.test(value);</span><br></pre></td></tr></table></figure>
+<h3 id="验证网址"><a href="#验证网址" class="headerlink" title="验证网址"></a>验证网址</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> *  @param &#123; string &#125; value</span><br><span class="line"> */</span><br><span class="line"><span class="built_in">export</span> const isRightWebsite = value =&gt; /^(((ht|f)tps?):\/\/)?[\w-]+(\.[\w-]+)+([\w.,@?^=%&amp;:/~+<span class="comment">#-]*[\w@?^=%&amp;/~+#-])?$/g.test(value);</span></span><br></pre></td></tr></table></figure>
+<h3 id="验证银行卡号"><a href="#验证银行卡号" class="headerlink" title="验证银行卡号"></a>验证银行卡号</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @param &#123; string &#125; value</span><br><span class="line"> */</span><br><span class="line"><span class="built_in">export</span> const isAccountNumber = value =&gt; /^[1-9]\d&#123;9,29&#125;$/g.test(value);</span><br></pre></td></tr></table></figure>
+<h3 id="验证中文姓名"><a href="#验证中文姓名" class="headerlink" title="验证中文姓名"></a>验证中文姓名</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @param &#123; string &#125; value</span><br><span class="line"> */</span><br><span class="line"><span class="built_in">export</span> const isChineseName = value =&gt; /^(?:[\u4e00-\u9fa5·]&#123;2,16&#125;)$/g.test(value);</span><br></pre></td></tr></table></figure>
+<h3 id="验证英文姓名"><a href="#验证英文姓名" class="headerlink" title="验证英文姓名"></a>验证英文姓名</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @param &#123; string &#125; value</span><br><span class="line"> */</span><br><span class="line"><span class="built_in">export</span> const isEnglishName = value =&gt; /(^[a-zA-Z]&#123;1&#125;[a-zA-Z\s]&#123;0,20&#125;[a-zA-Z]&#123;1&#125;$)/g.test(value);</span><br></pre></td></tr></table></figure>
+
+<h3 id="验证严谨手机号"><a href="#验证严谨手机号" class="headerlink" title="验证严谨手机号"></a>验证严谨手机号</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @param &#123; string &#125; value</span><br><span class="line"> */</span><br><span class="line"><span class="built_in">export</span> const isMPStrict = value =&gt; /^(?:(?:\+|00)86)?1(?:(?:3[\d])|(?:4[5-7|9])|(?:5[0-3|5-9])|(?:6[5-7])|(?:7[0-8])|(?:8[\d])|(?:9[1|8|9]))\d&#123;8&#125;$/g.test(value);</span><br></pre></td></tr></table></figure>
+<h3 id="验证邮箱"><a href="#验证邮箱" class="headerlink" title="验证邮箱"></a>验证邮箱</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @param &#123; string &#125; value</span><br><span class="line"> */</span><br><span class="line"><span class="built_in">export</span> const isEmail = value =&gt; /^[a-zA-Z0-9.!<span class="comment">#$%&amp;'*+/=?^_`&#123;|&#125;~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]&#123;0,61&#125;[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]&#123;0,61&#125;[a-zA-Z0-9])?)*$/g.test(value);</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="验证座机号码"><a href="#验证座机号码" class="headerlink" title="验证座机号码"></a>验证座机号码</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @param &#123; string &#125; value</span><br><span class="line"> */</span><br><span class="line"><span class="built_in">export</span> const isLandlineTelephone = value =&gt; /\d&#123;3&#125;-\d&#123;8&#125;|\d&#123;4&#125;-\d&#123;7&#125;/g.test(value);</span><br></pre></td></tr></table></figure>
+
+<h3 id="验证身份证号码"><a href="#验证身份证号码" class="headerlink" title="验证身份证号码"></a>验证身份证号码</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @param &#123; string &#125; value</span><br><span class="line"> */</span><br><span class="line"><span class="built_in">export</span> const isIDCardNew = value =&gt; /^\d&#123;6&#125;(18|19|20)\d&#123;2&#125;(0\d|10|11|12)([0-2]\d|30|31)\d&#123;3&#125;[\dXx]$/g.test(value);</span><br></pre></td></tr></table></figure>
+
+<h3 id="验证护照"><a href="#验证护照" class="headerlink" title="验证护照"></a>验证护照</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @param &#123; string &#125; value</span><br><span class="line"> */</span><br><span class="line"><span class="built_in">export</span> const isPassport = value =&gt; /(^[EeKkGgDdSsPpHh]\d&#123;8&#125;$)|(^(([Ee][a-fA-F])|([DdSsPp][Ee])|([Kk][Jj])|([Mm][Aa])|(1[45]))\d&#123;7&#125;$)/g.test(value);</span><br></pre></td></tr></table></figure>
+
+<h3 id="验证账号是否合法，5-13位，允许字母下划线组合"><a href="#验证账号是否合法，5-13位，允许字母下划线组合" class="headerlink" title="验证账号是否合法，5-13位，允许字母下划线组合"></a>验证账号是否合法，5-13位，允许字母下划线组合</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @param &#123; string &#125; value</span><br><span class="line"> */</span><br><span class="line"><span class="built_in">export</span> const isWebAccount = value =&gt; /^[a-zA-Z]\w&#123;4,15&#125;$/g.test(value);</span><br></pre></td></tr></table></figure>
+
+<h3 id="验证中文-汉子"><a href="#验证中文-汉子" class="headerlink" title="验证中文/汉子"></a>验证中文/汉子</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @param &#123; string &#125; value</span><br><span class="line"> */</span><br><span class="line"><span class="built_in">export</span> const isChineseCharacter = value =&gt; /^(?:[\u3400-\u4DB5\u4E00-\u9FEA\uFA0E\uFA0F\uFA11\uFA13\uFA14\uFA1F\uFA21\uFA23\uFA24\uFA27-\uFA29]|[\uD840-\uD868\uD86A-\uD86C\uD86F-\uD872\uD874-\uD879][\uDC00-\uDFFF]|\uD869[\uDC00-\uDED6\uDF00-\uDFFF]|\uD86D[\uDC00-\uDF34\uDF40-\uDFFF]|\uD86E[\uDC00-\uDC1D\uDC20-\uDFFF]|\uD873[\uDC00-\uDEA1\uDEB0-\uDFFF]|\uD87A[\uDC00-\uDFE0])+$/g.test(value);</span><br></pre></td></tr></table></figure>
+
+<h3 id="验证小数"><a href="#验证小数" class="headerlink" title="验证小数"></a>验证小数</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @param &#123; string &#125; value</span><br><span class="line"> */</span><br><span class="line"><span class="built_in">export</span> const isDecimal = value =&gt; /^\d+\.\d+$/g.test(value);</span><br></pre></td></tr></table></figure>
+
+<h3 id="验证数字"><a href="#验证数字" class="headerlink" title="验证数字"></a>验证数字</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @param &#123; string &#125; value</span><br><span class="line"> */</span><br><span class="line"><span class="built_in">export</span> const isNumber = value =&gt; /^\d&#123;1,&#125;$/g.test(value);</span><br></pre></td></tr></table></figure>
+
+<h3 id="验证qq号码"><a href="#验证qq号码" class="headerlink" title="验证qq号码"></a>验证qq号码</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @param &#123; string &#125; value</span><br><span class="line"> */</span><br><span class="line"><span class="built_in">export</span> const isQQNum = value =&gt; /^[1-9][0-9]&#123;4,10&#125;$/g.test(value);</span><br></pre></td></tr></table></figure>
+<h3 id="验证数字和字母"><a href="#验证数字和字母" class="headerlink" title="验证数字和字母"></a>验证数字和字母</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @param &#123; string &#125; value</span><br><span class="line"> */</span><br><span class="line"><span class="built_in">export</span> const isNumAndStr = value =&gt; /^[A-Za-z0-9]+$/g.test(value);</span><br></pre></td></tr></table></figure>
+
+<h3 id="验证英文字母"><a href="#验证英文字母" class="headerlink" title="验证英文字母"></a>验证英文字母</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @param &#123; string &#125; value</span><br><span class="line"> */</span><br><span class="line"><span class="built_in">export</span> const isEnglish = value =&gt; /^[a-zA-Z]+$/g.test(value);</span><br></pre></td></tr></table></figure>
+
+<h3 id="获取url参数"><a href="#获取url参数" class="headerlink" title="获取url参数"></a>获取url参数</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @param &#123;*&#125; name</span><br><span class="line"> * @param &#123;*&#125; origin</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> <span class="keyword">function</span> getUrlParam(name, origin = null) &#123;</span><br><span class="line">    <span class="built_in">let</span> reg = new RegExp(<span class="string">"(^|&amp;)"</span> + name + <span class="string">"=([^&amp;]*)(&amp;|$)"</span>);</span><br><span class="line">    <span class="built_in">let</span> r = null;</span><br><span class="line">    <span class="keyword">if</span> (origin == null) &#123;</span><br><span class="line">        r = window.location.search.substr(1).match(reg);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        r = origin.substr(1).match(reg);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (r != null) <span class="built_in">return</span> decodeURIComponent(r[2]);</span><br><span class="line">    <span class="built_in">return</span> null;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="获取url参数第二种"><a href="#获取url参数第二种" class="headerlink" title="获取url参数第二种"></a>获取url参数第二种</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @param &#123;*&#125; name</span><br><span class="line"> * @param &#123;*&#125; origin</span><br><span class="line"> */</span><br><span class="line"><span class="built_in">export</span> <span class="keyword">function</span> getUrlParams(name, origin = null) &#123;</span><br><span class="line">    <span class="built_in">let</span> url = location.href;</span><br><span class="line">    <span class="built_in">let</span> temp1 = url.split(<span class="string">'?'</span>);</span><br><span class="line">    <span class="built_in">let</span> pram = temp1[1];</span><br><span class="line">    <span class="built_in">let</span> keyValue = pram.split(<span class="string">'&amp;'</span>);</span><br><span class="line">    <span class="built_in">let</span> obj = &#123;&#125;;</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">let</span> i = 0; i &lt; keyValue.length; i++) &#123;</span><br><span class="line">        <span class="built_in">let</span> item = keyValue[i].split(<span class="string">'='</span>);</span><br><span class="line">        <span class="built_in">let</span> key = item[0];</span><br><span class="line">        <span class="built_in">let</span> value = item[1];</span><br><span class="line">        obj[key] = value;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">return</span> obj[name];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="修改url参数"><a href="#修改url参数" class="headerlink" title="修改url参数"></a>修改url参数</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @param &#123; string &#125; paramName</span><br><span class="line"> * @param &#123; string &#125; replaceWith</span><br><span class="line"> */</span><br><span class="line"><span class="built_in">export</span> <span class="keyword">function</span> replaceParamVal(paramName,replaceWith) &#123;</span><br><span class="line">    var oUrl = location.href.toString();</span><br><span class="line">    var re=<span class="built_in">eval</span>(<span class="string">'/('</span>+ paramName+<span class="string">'=)([^&amp;]*)/gi'</span>);</span><br><span class="line">    location.href = oUrl.replace(re,paramName+<span class="string">'='</span>+replaceWith);</span><br><span class="line">    <span class="built_in">return</span> location.href;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="删除url指定的参数"><a href="#删除url指定的参数" class="headerlink" title="删除url指定的参数"></a>删除url指定的参数</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @param &#123; string &#125; name</span><br><span class="line"> */</span><br><span class="line"><span class="built_in">export</span> <span class="keyword">function</span> funcUrlDel(name)&#123;</span><br><span class="line">    var loca =location;</span><br><span class="line">    var baseUrl = loca.origin + loca.pathname + <span class="string">"?"</span>;</span><br><span class="line">    var query = loca.search.substr(1);</span><br><span class="line">    <span class="keyword">if</span> (query.indexOf(name)&gt;-1) &#123;</span><br><span class="line">        var obj = &#123;&#125;;</span><br><span class="line">        var arr = query.split(<span class="string">"&amp;"</span>);</span><br><span class="line">        <span class="keyword">for</span> (var i = 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">            arr[i] = arr[i].split(<span class="string">"="</span>);</span><br><span class="line">            obj[arr[i][0]] = arr[i][1];</span><br><span class="line">        &#125;</span><br><span class="line">        delete obj[name];</span><br><span class="line">        var url = baseUrl + JSON.stringify(obj).replace(/[\"\&#123;\&#125;]/g,<span class="string">""</span>).replace(/\:/g,<span class="string">"="</span>).replace(/\,/g,<span class="string">"&amp;"</span>);</span><br><span class="line">        <span class="built_in">return</span> url</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="获取窗口可是范围高度"><a href="#获取窗口可是范围高度" class="headerlink" title="获取窗口可是范围高度"></a>获取窗口可是范围高度</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> <span class="keyword">function</span> <span class="function"><span class="title">getClientHeight</span></span>() &#123;</span><br><span class="line">    <span class="built_in">let</span> clientHeight = 0;</span><br><span class="line">    <span class="keyword">if</span> (document.body.clientHeight &amp;&amp; document.documentElement.clientHeight) &#123;</span><br><span class="line">        clientHeight = (document.body.clientHeight &lt; document.documentElement.clientHeight) ? document.body.clientHeight : document.documentElement.clientHeight;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        clientHeight = (document.body.clientHeight &gt; document.documentElement.clientHeight) ? document.body.clientHeight : document.documentElement.clientHeight;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">return</span> clientHeight;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="获取窗口可是范围宽度"><a href="#获取窗口可是范围宽度" class="headerlink" title="获取窗口可是范围宽度"></a>获取窗口可是范围宽度</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> <span class="keyword">function</span> <span class="function"><span class="title">getPageViewWidth</span></span>() &#123;</span><br><span class="line">    <span class="built_in">let</span> d = document,</span><br><span class="line">        a = d.compatMode == <span class="string">"BackCompat"</span> ? d.body : d.documentElement;</span><br><span class="line">    <span class="built_in">return</span> a.clientWidth;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="获取窗口尺寸"><a href="#获取窗口尺寸" class="headerlink" title="获取窗口尺寸"></a>获取窗口尺寸</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> <span class="keyword">function</span> <span class="function"><span class="title">getViewportOffset</span></span>() &#123;</span><br><span class="line">    <span class="keyword">if</span> (window.innerWidth) &#123;</span><br><span class="line">        <span class="built_in">return</span> &#123;</span><br><span class="line">            w: window.innerWidth,</span><br><span class="line">            h: window.innerHeight</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        // ie8及其以下</span><br><span class="line">        <span class="keyword">if</span> (document.compatMode === <span class="string">"BackCompat"</span>) &#123;</span><br><span class="line">            // 怪异模式</span><br><span class="line">            <span class="built_in">return</span> &#123;</span><br><span class="line">                w: document.body.clientWidth,</span><br><span class="line">                h: document.body.clientHeight</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            // 标准模式</span><br><span class="line">            <span class="built_in">return</span> &#123;</span><br><span class="line">                w: document.documentElement.clientWidth,</span><br><span class="line">                h: document.documentElement.clientHeight</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="获取滚动条距离顶部的高度"><a href="#获取滚动条距离顶部的高度" class="headerlink" title="获取滚动条距离顶部的高度"></a>获取滚动条距离顶部的高度</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> <span class="keyword">function</span> <span class="function"><span class="title">getPageScrollTop</span></span>() &#123;</span><br><span class="line">    <span class="built_in">let</span> a = document;</span><br><span class="line">    <span class="built_in">return</span> a.documentElement.scrollTop || a.body.scrollTop;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="开启-关闭全屏"><a href="#开启-关闭全屏" class="headerlink" title="开启/关闭全屏"></a>开启/关闭全屏</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @param &#123;*&#125; element</span><br><span class="line"> */</span><br><span class="line"><span class="built_in">export</span> <span class="keyword">function</span> launchFullscreen(element) &#123;</span><br><span class="line">    <span class="keyword">if</span> (element.requestFullscreen) &#123;</span><br><span class="line">        element.requestFullscreen()</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (element.mozRequestFullScreen) &#123;</span><br><span class="line">        element.mozRequestFullScreen()</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (element.msRequestFullscreen) &#123;</span><br><span class="line">        element.msRequestFullscreen()</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (element.webkitRequestFullscreen) &#123;</span><br><span class="line">        element.webkitRequestFullScreen()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> <span class="keyword">function</span> <span class="function"><span class="title">exitFullscreen</span></span>() &#123;</span><br><span class="line">    <span class="keyword">if</span> (document.exitFullscreen) &#123;</span><br><span class="line">        document.exitFullscreen()</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (document.msExitFullscreen) &#123;</span><br><span class="line">        document.msExitFullscreen()</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (document.mozCancelFullScreen) &#123;</span><br><span class="line">        document.mozCancelFullScreen()</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (document.webkitExitFullscreen) &#123;</span><br><span class="line">        document.webkitExitFullscreen()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="返回当前滚动条的位置"><a href="#返回当前滚动条的位置" class="headerlink" title="返回当前滚动条的位置"></a>返回当前滚动条的位置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> const getScrollPosition = (el = window) =&gt; (&#123;</span><br><span class="line">    x: el.pageXOffset !== undefined ? el.pageXOffset : el.scrollLeft,</span><br><span class="line">    y: el.pageYOffset !== undefined ? el.pageYOffset : el.scrollTop</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="平滑滚动到页面顶部"><a href="#平滑滚动到页面顶部" class="headerlink" title="平滑滚动到页面顶部"></a>平滑滚动到页面顶部</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> const scrollToTop = () =&gt; &#123;</span><br><span class="line">    const c = document.documentElement.scrollTop || document.body.scrollTop;</span><br><span class="line">    <span class="keyword">if</span> (c &gt; 0) &#123;</span><br><span class="line">        window.requestAnimationFrame(scrollToTop);</span><br><span class="line">        window.scrollTo(0, c - c / 8);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="http-跳-https"><a href="#http-跳-https" class="headerlink" title="http 跳 https"></a>http 跳 https</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> const httpsRedirect = () =&gt; &#123;</span><br><span class="line">    <span class="keyword">if</span> (location.protocol !== <span class="string">'https:'</span>) location.replace(<span class="string">'https://'</span> + location.href.split(<span class="string">'//'</span>)[1]);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="检查页面底部可见"><a href="#检查页面底部可见" class="headerlink" title="检查页面底部可见"></a>检查页面底部可见</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> const bottomVisible = () =&gt;&#123;</span><br><span class="line">    <span class="built_in">return</span> document.documentElement.clientHeight + window.scrollY &gt;=</span><br><span class="line">        (document.documentElement.scrollHeight || document.documentElement.clientHeight);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="打开一个窗口"><a href="#打开一个窗口" class="headerlink" title="打开一个窗口"></a>打开一个窗口</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @param &#123; string &#125; url</span><br><span class="line"> * @param &#123; string &#125; windowName</span><br><span class="line"> * @param &#123; number &#125; width</span><br><span class="line"> * @param &#123; number &#125; height</span><br><span class="line"> */</span><br><span class="line"><span class="built_in">export</span> <span class="keyword">function</span> openWindow(url, windowName, width, height) &#123;</span><br><span class="line">    var x = parseInt(screen.width / 2.0) - width / 2.0;</span><br><span class="line">    var y = parseInt(screen.height / 2.0) - height / 2.0;</span><br><span class="line">    var isMSIE = navigator.appName == <span class="string">"Microsoft Internet Explorer"</span>;</span><br><span class="line">    <span class="keyword">if</span> (isMSIE) &#123;</span><br><span class="line">        var p = <span class="string">"resizable=1,location=no,scrollbars=no,width="</span>;</span><br><span class="line">        p = p + width;</span><br><span class="line">        p = p + <span class="string">",height="</span>;</span><br><span class="line">        p = p + height;</span><br><span class="line">        p = p + <span class="string">",left="</span>;</span><br><span class="line">        p = p + x;</span><br><span class="line">        p = p + <span class="string">",top="</span>;</span><br><span class="line">        p = p + y;</span><br><span class="line">        window.open(url, windowName, p);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        var win = window.open(</span><br><span class="line">            url,</span><br><span class="line">            <span class="string">"ZyiisPopup"</span>,</span><br><span class="line">            <span class="string">"top="</span> +</span><br><span class="line">            y +</span><br><span class="line">            <span class="string">",left="</span> +</span><br><span class="line">            x +</span><br><span class="line">            <span class="string">",scrollbars="</span> +</span><br><span class="line">            scrollbars +</span><br><span class="line">            <span class="string">",dialog=yes,modal=yes,width="</span> +</span><br><span class="line">            width +</span><br><span class="line">            <span class="string">",height="</span> +</span><br><span class="line">            height +</span><br><span class="line">            <span class="string">",resizable=no"</span></span><br><span class="line">        );</span><br><span class="line">        <span class="built_in">eval</span>(<span class="string">"try &#123; win.resizeTo(width, height); &#125; catch(e) &#123; &#125;"</span>);</span><br><span class="line">        win.focus();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="自适应页面"><a href="#自适应页面" class="headerlink" title="自适应页面"></a>自适应页面</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @param &#123; number &#125; width</span><br><span class="line"> */</span><br><span class="line"><span class="built_in">export</span> <span class="keyword">function</span> AutoResponse(width = 750) &#123;</span><br><span class="line">    const target = document.documentElement;</span><br><span class="line">    target.clientWidth &gt;= 600</span><br><span class="line">        ? (target.style.fontSize = <span class="string">"80px"</span>)</span><br><span class="line">        : (target.style.fontSize = target.clientWidth / width * 100 + <span class="string">"px"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="浏览器localstorage-存储"><a href="#浏览器localstorage-存储" class="headerlink" title="浏览器localstorage 存储"></a>浏览器localstorage 存储</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 目前对象值如果是函数 、RegExp等特殊对象存贮会被忽略</span><br><span class="line"> * @param &#123; String &#125; key  属性</span><br><span class="line"> * @param &#123; string &#125; value 值</span><br><span class="line"> */</span><br><span class="line"><span class="built_in">export</span> const localStorageSet = (key, value) =&gt; &#123;</span><br><span class="line">    <span class="keyword">if</span> (typeof (value) === <span class="string">'object'</span>) value = JSON.stringify(value);</span><br><span class="line">    localStorage.setItem(key, value)</span><br><span class="line">&#125;;</span><br><span class="line">/**</span><br><span class="line"> * @param &#123;String&#125; key  属性</span><br><span class="line"> */</span><br><span class="line"><span class="built_in">export</span> const localStorageGet = (key) =&gt; &#123;</span><br><span class="line">    <span class="built_in">return</span> localStorage.getItem(key)</span><br><span class="line">&#125;;</span><br><span class="line">/**</span><br><span class="line"> * @param &#123;String&#125; key  属性</span><br><span class="line"> */</span><br><span class="line"><span class="built_in">export</span> const localStorageRemove = (key) =&gt; &#123;</span><br><span class="line">    localStorage.removeItem(key)</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * @param &#123;String&#125; key  属性</span><br><span class="line"> * @param &#123;*&#125; value 存贮值</span><br><span class="line"> * @param &#123; number &#125; expire 过期时间,毫秒数</span><br><span class="line"> */</span><br><span class="line"><span class="built_in">export</span> const localStorageSetExpire = (key, value, expire) =&gt; &#123;</span><br><span class="line">    <span class="keyword">if</span> (typeof (value) === <span class="string">'object'</span>) value = JSON.stringify(value);</span><br><span class="line">    localStorage.setItem(key, value);</span><br><span class="line">    setTimeout(() =&gt; &#123;</span><br><span class="line">        localStorage.removeItem(key)</span><br><span class="line">    &#125;, expire)</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="sessionStorage-存储"><a href="#sessionStorage-存储" class="headerlink" title="sessionStorage 存储"></a>sessionStorage 存储</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @param &#123;String&#125; key  属性</span><br><span class="line"> * @param &#123;*&#125; value 值</span><br><span class="line"> */</span><br><span class="line"><span class="built_in">export</span> const sessionStorageSet = (key, value) =&gt; &#123;</span><br><span class="line">    <span class="keyword">if</span> (typeof (value) === <span class="string">'object'</span>) value = JSON.stringify(value);</span><br><span class="line">    sessionStorage.setItem(key, value)</span><br><span class="line">&#125;;</span><br><span class="line">/**</span><br><span class="line"> * @param &#123;String&#125; key  属性</span><br><span class="line"> */</span><br><span class="line"><span class="built_in">export</span> const sessionStorageGet = (key) =&gt; &#123;</span><br><span class="line">    <span class="built_in">return</span> sessionStorage.getItem(key)</span><br><span class="line">&#125;;</span><br><span class="line">/**</span><br><span class="line"> * @param &#123;String&#125; key  属性</span><br><span class="line"> */</span><br><span class="line"><span class="built_in">export</span> const sessionStorageRemove = (key) =&gt; &#123;</span><br><span class="line">    sessionStorage.removeItem(key)</span><br><span class="line">&#125;;</span><br><span class="line">/**</span><br><span class="line"> * @param &#123;String&#125; key  属性</span><br><span class="line"> * @param &#123;*&#125; value 存贮值</span><br><span class="line"> * @param &#123;String&#125; expire 过期时间,毫秒数</span><br><span class="line"> */</span><br><span class="line"><span class="built_in">export</span> const sessionStorageSetExpire = (key, value, expire) =&gt; &#123;</span><br><span class="line">    <span class="keyword">if</span> (typeof (value) === <span class="string">'object'</span>) value = JSON.stringify(value);</span><br><span class="line">    sessionStorage.setItem(key, value);</span><br><span class="line">    setTimeout(() =&gt; &#123;</span><br><span class="line">        sessionStorage.removeItem(key)</span><br><span class="line">    &#125;, expire)</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="cookie-存储"><a href="#cookie-存储" class="headerlink" title="cookie 存储"></a>cookie 存储</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @param &#123;String&#125; key  属性</span><br><span class="line"> * @param &#123;*&#125; value  值</span><br><span class="line"> * @param &#123; String &#125; expire  过期时间,单位天</span><br><span class="line"> */</span><br><span class="line"><span class="built_in">export</span> const cookieSet = (key, value, expire) =&gt; &#123;</span><br><span class="line">    const d = new Date();</span><br><span class="line">    d.setDate(d.getDate() + expire);</span><br><span class="line">    document.cookie = `<span class="variable">$&#123;key&#125;</span>=<span class="variable">$&#123;value&#125;</span>;expires=<span class="variable">$&#123;d.toUTCString()&#125;</span>`</span><br><span class="line">&#125;;</span><br><span class="line">/**</span><br><span class="line"> * @param &#123;String&#125; key  属性</span><br><span class="line"> */</span><br><span class="line"><span class="built_in">export</span> const cookieGet = (key) =&gt; &#123;</span><br><span class="line">    const cookieStr = unescape(document.cookie);</span><br><span class="line">    const arr = cookieStr.split(<span class="string">'; '</span>);</span><br><span class="line">    <span class="built_in">let</span> cookieValue = <span class="string">''</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">let</span> i = 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">        const temp = arr[i].split(<span class="string">'='</span>);</span><br><span class="line">        <span class="keyword">if</span> (temp[0] === key) &#123;</span><br><span class="line">            cookieValue = temp[1];</span><br><span class="line">            <span class="built_in">break</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">return</span> cookieValue</span><br><span class="line">&#125;;</span><br><span class="line">/**</span><br><span class="line"> * @param &#123;String&#125; key  属性</span><br><span class="line"> */</span><br><span class="line"><span class="built_in">export</span> const cookieRemove = (key) =&gt; &#123;</span><br><span class="line">    document.cookie = `<span class="variable">$&#123;encodeURIComponent(key)&#125;</span>=;expires=<span class="variable">$&#123;new Date()&#125;</span>`</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="截流和防抖"><a href="#截流和防抖" class="headerlink" title="截流和防抖"></a>截流和防抖</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @param &#123; <span class="keyword">function</span> &#125; func 函数</span><br><span class="line"> * @param &#123; number &#125; <span class="built_in">wait</span> 延迟执行毫秒数</span><br><span class="line"> * @param &#123; number &#125; <span class="built_in">type</span> 1 表时间戳版，2 表定时器版</span><br><span class="line"> */</span><br><span class="line"><span class="built_in">export</span> <span class="keyword">function</span> throttle(func, <span class="built_in">wait</span> ,<span class="built_in">type</span>) &#123;</span><br><span class="line">    <span class="built_in">let</span> previous, timeout;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">type</span>===1)&#123;</span><br><span class="line">        previous = 0;</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(<span class="built_in">type</span>===2)&#123;</span><br><span class="line">        timeout = null;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">return</span> <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">        <span class="built_in">let</span> context = this;</span><br><span class="line">        <span class="built_in">let</span> args = arguments;</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">type</span>===1)&#123;</span><br><span class="line">            <span class="built_in">let</span> now = Date.now();</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (now - previous &gt; <span class="built_in">wait</span>) &#123;</span><br><span class="line">                func.apply(context, args);</span><br><span class="line">                previous = now;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(<span class="built_in">type</span>===2)&#123;</span><br><span class="line">            <span class="keyword">if</span> (!timeout) &#123;</span><br><span class="line">                timeout = setTimeout(() =&gt; &#123;</span><br><span class="line">                    timeout = null;</span><br><span class="line">                    func.apply(context, args)</span><br><span class="line">                &#125;, <span class="built_in">wait</span>)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * @param &#123; <span class="keyword">function</span> &#125; func</span><br><span class="line"> * @param &#123; number &#125; <span class="built_in">wait</span> 延迟执行毫秒数</span><br><span class="line"> * @param &#123; boolean &#125; immediate  <span class="literal">true</span> 表立即执行，<span class="literal">false</span> 表非立即执行</span><br><span class="line"> */</span><br><span class="line"><span class="built_in">export</span> <span class="keyword">function</span> debounce(func,<span class="built_in">wait</span>,immediate) &#123;</span><br><span class="line">    <span class="built_in">let</span> timeout;</span><br><span class="line">    <span class="built_in">return</span> <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">        <span class="built_in">let</span> context = this;</span><br><span class="line">        <span class="built_in">let</span> args = arguments;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (timeout) clearTimeout(timeout);</span><br><span class="line">        <span class="keyword">if</span> (immediate) &#123;</span><br><span class="line">            <span class="built_in">let</span> callNow = !timeout;</span><br><span class="line">            timeout = setTimeout(() =&gt; &#123;</span><br><span class="line">                timeout = null;</span><br><span class="line">            &#125;, <span class="built_in">wait</span>);</span><br><span class="line">            <span class="keyword">if</span> (callNow) func.apply(context, args)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            timeout = setTimeout(() =&gt; &#123;</span><br><span class="line">                func.apply(context, args)</span><br><span class="line">            &#125;, <span class="built_in">wait</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="判断数据类型"><a href="#判断数据类型" class="headerlink" title="判断数据类型"></a>判断数据类型</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @param &#123;*&#125; target </span><br><span class="line"> */</span><br><span class="line"><span class="built_in">export</span> <span class="keyword">function</span> <span class="built_in">type</span>(target) &#123;</span><br><span class="line">    <span class="built_in">let</span> ret = typeof(target);</span><br><span class="line">    <span class="built_in">let</span> template = &#123;</span><br><span class="line">        <span class="string">"[object Array]"</span>: <span class="string">"array"</span>,</span><br><span class="line">        <span class="string">"[object Object]"</span>:<span class="string">"object"</span>,</span><br><span class="line">        <span class="string">"[object Number]"</span>:<span class="string">"number - object"</span>,</span><br><span class="line">        <span class="string">"[object Boolean]"</span>:<span class="string">"boolean - object"</span>,</span><br><span class="line">        <span class="string">"[object String]"</span>:<span class="string">'string-object'</span></span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(target === null) &#123;</span><br><span class="line">        <span class="built_in">return</span> <span class="string">'null'</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(ret == <span class="string">"object"</span>)&#123;</span><br><span class="line">        <span class="built_in">let</span> str = Object.prototype.toString.call(target);</span><br><span class="line">        <span class="built_in">return</span> template[str];</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="built_in">return</span> ret;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="生成指定范围随机数"><a href="#生成指定范围随机数" class="headerlink" title="生成指定范围随机数"></a>生成指定范围随机数</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @param &#123; number &#125; min </span><br><span class="line"> * @param &#123; number &#125; max </span><br><span class="line"> */</span><br><span class="line"><span class="built_in">export</span> const RandomNum = (min, max) =&gt; Math.floor(Math.random() * (max - min + 1)) + min;</span><br><span class="line"><span class="built_in">export</span> const RandomNum = (min,max) =&gt; Math.floor(Math.random() * (max-min +1)) +min</span><br></pre></td></tr></table></figure>
+
+<h3 id="数组乱序"><a href="#数组乱序" class="headerlink" title="数组乱序"></a>数组乱序</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @param &#123;array&#125; arr</span><br><span class="line"> */</span><br><span class="line"><span class="built_in">export</span> <span class="keyword">function</span> arrScrambling(arr) &#123;</span><br><span class="line">    <span class="built_in">let</span> array = arr;</span><br><span class="line">    <span class="built_in">let</span> index = array.length;</span><br><span class="line">    <span class="keyword">while</span> (index) &#123;</span><br><span class="line">        index -= 1;</span><br><span class="line">        <span class="built_in">let</span> randomIndex = Math.floor(Math.random() * index);</span><br><span class="line">        <span class="built_in">let</span> middleware = array[index];</span><br><span class="line">        array[index] = array[randomIndex];</span><br><span class="line">        array[randomIndex] = middleware</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">return</span> array</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="数组交集"><a href="#数组交集" class="headerlink" title="数组交集"></a>数组交集</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @param &#123; array&#125; arr1</span><br><span class="line"> * @param &#123; array &#125; arr2</span><br><span class="line"> */</span><br><span class="line"><span class="built_in">export</span> const similarity = (arr1, arr2) =&gt; arr1.filter(v =&gt; arr2.includes(v));</span><br></pre></td></tr></table></figure>
+
+<h3 id="数组中某元素出现的次数"><a href="#数组中某元素出现的次数" class="headerlink" title="数组中某元素出现的次数"></a>数组中某元素出现的次数</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @param &#123; array &#125; arr</span><br><span class="line"> * @param &#123;*&#125; value</span><br><span class="line"> */</span><br><span class="line"><span class="built_in">export</span> <span class="keyword">function</span> countOccurrences(arr, value) &#123;</span><br><span class="line">    <span class="built_in">return</span> arr.reduce((a, v) =&gt; v === value ? a + 1 : a + 0, 0);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="加法-减法-乘法-除法-解决精度问题"><a href="#加法-减法-乘法-除法-解决精度问题" class="headerlink" title="加法 减法 乘法 除法 解决精度问题"></a>加法 减法 乘法 除法 解决精度问题</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @param &#123; number &#125; arg1</span><br><span class="line"> * @param &#123; number &#125; arg2</span><br><span class="line"> */</span><br><span class="line"><span class="built_in">export</span> <span class="keyword">function</span> add(arg1, arg2) &#123;</span><br><span class="line">    <span class="built_in">let</span> r1, r2, m;</span><br><span class="line">    try &#123; r1 = arg1.toString().split(<span class="string">"."</span>)[1].length &#125; catch (e) &#123; r1 = 0 &#125;</span><br><span class="line">    try &#123; r2 = arg2.toString().split(<span class="string">"."</span>)[1].length &#125; catch (e) &#123; r2 = 0 &#125;</span><br><span class="line">    m = Math.pow(10, Math.max(r1, r2));</span><br><span class="line">    <span class="built_in">return</span> (arg1 * m + arg2 * m) / m</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * @param &#123; number &#125; arg1</span><br><span class="line"> * @param &#123; number &#125; arg2</span><br><span class="line"> */</span><br><span class="line"><span class="built_in">export</span> <span class="keyword">function</span> sub(arg1, arg2) &#123;</span><br><span class="line">    <span class="built_in">let</span> r1, r2, m, n;</span><br><span class="line">    try &#123; r1 = arg1.toString().split(<span class="string">"."</span>)[1].length &#125; catch (e) &#123; r1 = 0 &#125;</span><br><span class="line">    try &#123; r2 = arg2.toString().split(<span class="string">"."</span>)[1].length &#125; catch (e) &#123; r2 = 0 &#125;</span><br><span class="line">    m = Math.pow(10, Math.max(r1, r2));</span><br><span class="line">    n = (r1 &gt;= r2) ? r1 : r2;</span><br><span class="line">    <span class="built_in">return</span> Number(((arg1 * m - arg2 * m) / m).toFixed(n));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * @param &#123; number &#125; num1</span><br><span class="line"> * @param &#123; number &#125; num2</span><br><span class="line"> */</span><br><span class="line"><span class="built_in">export</span> <span class="keyword">function</span> division(num1,num2)&#123;</span><br><span class="line">    <span class="built_in">let</span> t1,t2,r1,r2;</span><br><span class="line">    try&#123;</span><br><span class="line">        t1 = num1.toString().split(<span class="string">'.'</span>)[1].length;</span><br><span class="line">    &#125;catch(e)&#123;</span><br><span class="line">        t1 = 0;</span><br><span class="line">    &#125;</span><br><span class="line">    try&#123;</span><br><span class="line">        t2=num2.toString().split(<span class="string">"."</span>)[1].length;</span><br><span class="line">    &#125;catch(e)&#123;</span><br><span class="line">        t2=0;</span><br><span class="line">    &#125;</span><br><span class="line">    r1=Number(num1.toString().replace(<span class="string">"."</span>,<span class="string">""</span>));</span><br><span class="line">    r2=Number(num2.toString().replace(<span class="string">"."</span>,<span class="string">""</span>));</span><br><span class="line">    <span class="built_in">return</span> (r1/r2)*Math.pow(10,t2-t1);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * @param &#123; number &#125; num1</span><br><span class="line"> * @param &#123; number &#125; num2</span><br><span class="line"> */</span><br><span class="line"><span class="built_in">export</span> <span class="keyword">function</span> mcl(num1,num2)&#123;</span><br><span class="line">    <span class="built_in">let</span> m=0,s1=num1.toString(),s2=num2.toString();</span><br><span class="line">    try&#123;m+=s1.split(<span class="string">"."</span>)[1].length&#125;catch(e)&#123;&#125;</span><br><span class="line">    try&#123;m+=s2.split(<span class="string">"."</span>)[1].length&#125;catch(e)&#123;&#125;</span><br><span class="line">    <span class="built_in">return</span> Number(s1.replace(<span class="string">"."</span>,<span class="string">""</span>))*Number(s2.replace(<span class="string">"."</span>,<span class="string">""</span>))/Math.pow(10,m);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="尾递归"><a href="#尾递归" class="headerlink" title="尾递归"></a>尾递归</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @param &#123; <span class="keyword">function</span> &#125; f</span><br><span class="line"> */</span><br><span class="line"><span class="built_in">export</span> <span class="keyword">function</span> tco(f) &#123;</span><br><span class="line">    <span class="built_in">let</span> value;</span><br><span class="line">    <span class="built_in">let</span> active = <span class="literal">false</span>;</span><br><span class="line">    <span class="built_in">let</span> accumulated = [];</span><br><span class="line"></span><br><span class="line">    <span class="built_in">return</span> <span class="keyword">function</span> <span class="function"><span class="title">accumulator</span></span>() &#123;</span><br><span class="line">        accumulated.push(arguments);</span><br><span class="line">        <span class="keyword">if</span> (!active) &#123;</span><br><span class="line">            active = <span class="literal">true</span>;</span><br><span class="line">            <span class="keyword">while</span> (accumulated.length) &#123;</span><br><span class="line">                value = f.apply(this, accumulated.shift());</span><br><span class="line">            &#125;</span><br><span class="line">            active = <span class="literal">false</span>;</span><br><span class="line">            <span class="built_in">return</span> value;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="生成随机数"><a href="#生成随机数" class="headerlink" title="生成随机数"></a>生成随机数</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> <span class="keyword">function</span> randomNumInteger (min,max) &#123;</span><br><span class="line">    switch(arguments.length)&#123;</span><br><span class="line">        // parseInt方法两个参数 第一个是字符串string, 第二个是2-36之间的进制数</span><br><span class="line">        <span class="keyword">case</span> 1: <span class="built_in">return</span> parseInt(Math.random() *min+1,10);</span><br><span class="line">        <span class="keyword">case</span> 2: <span class="built_in">return</span> parseInt(Math.random() *(max-min+1)+min,10);</span><br><span class="line">        default: <span class="built_in">return</span> 0;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="去除空格"><a href="#去除空格" class="headerlink" title="去除空格"></a>去除空格</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @param &#123;string&#125; str 待处理的字符串</span><br><span class="line"> * @param &#123;number&#125; <span class="built_in">type</span> 去除空格类型 1:所有的空格。2:前后空格 3:前空格。4:后空格。默人为1 </span><br><span class="line"> */</span><br><span class="line"><span class="built_in">export</span> <span class="keyword">function</span> clearTrim(str,<span class="built_in">type</span>)&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">type</span> &amp;&amp; <span class="built_in">type</span> !== 1 &amp;&amp; <span class="built_in">type</span> !== 2 &amp;&amp; <span class="built_in">type</span> !== 3 &amp;&amp; <span class="built_in">type</span> !== 4) <span class="built_in">return</span>;</span><br><span class="line">    switch(<span class="built_in">type</span>)&#123;</span><br><span class="line">        <span class="keyword">case</span> 1:</span><br><span class="line">            <span class="built_in">return</span> str.replace(/\s/g, <span class="string">""</span>);</span><br><span class="line">        <span class="keyword">case</span> 2:</span><br><span class="line">            <span class="built_in">return</span> str.replace(/(^\s)|(\s*$)/g, <span class="string">""</span>);</span><br><span class="line">        <span class="keyword">case</span> 3:</span><br><span class="line">            <span class="built_in">return</span> str.replace(/(^\s)/g, <span class="string">""</span>);</span><br><span class="line">        <span class="keyword">case</span> 4:</span><br><span class="line">            <span class="built_in">return</span> str.replace(/(\s$)/g, <span class="string">""</span>);</span><br><span class="line">        default:</span><br><span class="line">            <span class="built_in">return</span> str;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="大小写转换"><a href="#大小写转换" class="headerlink" title="大小写转换"></a>大小写转换</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @param &#123; string &#125; str 待转换的字符串</span><br><span class="line"> * @param &#123; number &#125; <span class="built_in">type</span> 1-全大写 2-全小写 3-首字母大写 其他-不转换</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> <span class="keyword">function</span> turnCase(str, <span class="built_in">type</span>) &#123;</span><br><span class="line">    switch (<span class="built_in">type</span>) &#123;</span><br><span class="line">        <span class="keyword">case</span> 1:</span><br><span class="line">            <span class="built_in">return</span> str.toUpperCase();</span><br><span class="line">        <span class="keyword">case</span> 2:</span><br><span class="line">            <span class="built_in">return</span> str.toLowerCase();</span><br><span class="line">        <span class="keyword">case</span> 3:</span><br><span class="line">            <span class="built_in">return</span> str[0].toUpperCase() + str.substr(1).toLowerCase();</span><br><span class="line">        default:</span><br><span class="line">            <span class="built_in">return</span> str;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="随机16进制颜色"><a href="#随机16进制颜色" class="headerlink" title="随机16进制颜色"></a>随机16进制颜色</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 方法一</span><br><span class="line"> */</span><br><span class="line"><span class="built_in">export</span> <span class="keyword">function</span> <span class="function"><span class="title">hexColor</span></span>() &#123;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">let</span> str = <span class="string">'#'</span>;</span><br><span class="line">    <span class="built_in">let</span> arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, <span class="string">'A'</span>, <span class="string">'B'</span>, <span class="string">'C'</span>, <span class="string">'D'</span>, <span class="string">'E'</span>, <span class="string">'F'</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">let</span> i = 0; i &lt; 6; i++) &#123;</span><br><span class="line">        <span class="built_in">let</span> index = Number.parseInt((Math.random() * 16).toString());</span><br><span class="line">        str += arr[index]</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">return</span> str;</span><br><span class="line">&#125;</span><br><span class="line">/**</span><br><span class="line"> * 方法二</span><br><span class="line"> */</span><br><span class="line"><span class="built_in">export</span> const randomHexColorCode = () =&gt; &#123;</span><br><span class="line">    <span class="built_in">let</span> n = (Math.random() * 0xfffff * 1000000).toString(16);</span><br><span class="line">    <span class="built_in">return</span> <span class="string">'#'</span> + n.slice(0, 6);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="防止xss攻击"><a href="#防止xss攻击" class="headerlink" title="防止xss攻击"></a>防止xss攻击</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> const escapeHTML = str =&gt;&#123;</span><br><span class="line">    str.replace(</span><br><span class="line">        /[&amp;&lt;&gt;<span class="string">'"]/g,</span></span><br><span class="line"><span class="string">        tag =&gt;</span></span><br><span class="line"><span class="string">            (&#123;</span></span><br><span class="line"><span class="string">                '</span>&amp;<span class="string">': '</span>&amp;amp;<span class="string">',</span></span><br><span class="line"><span class="string">                '</span>&lt;<span class="string">': '</span>&amp;lt;<span class="string">',</span></span><br><span class="line"><span class="string">                '</span>&gt;<span class="string">': '</span>&amp;gt;<span class="string">',</span></span><br><span class="line"><span class="string">                "'</span><span class="string">": '&amp;#39;',</span></span><br><span class="line"><span class="string">                '"</span><span class="string">': '</span>&amp;quot;<span class="string">'</span></span><br><span class="line"><span class="string">            &#125;[tag] || tag)</span></span><br><span class="line"><span class="string">    );</span></span><br><span class="line"><span class="string">&#125;;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="检测移动设备"><a href="#检测移动设备" class="headerlink" title="检测移动设备"></a>检测移动设备</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> const detectDeviceType = () =&gt; &#123; </span><br><span class="line">    <span class="built_in">return</span> /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? <span class="string">'Mobile'</span> : <span class="string">'Desktop'</span>; </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+	
+	</div>
+	
+	<div id="current-post-cover" data-scr="/img/cart_cover.jpg"></div>
+
+	<!-- relate post, comment...-->
+	<div class="investment-container">
+		<div class="investment-header">
+			<div class="investment-title-1">
+				<div class="on">相关文章</div>
+				<div>评论</div>
+				<div>分享</div>
+			</div>
+			<div class="investment-title-2">	            
+				
+	<span>
+		<a href="javascript: window.scrollTo(0, 0);">返回顶部</a>
+		
+		
+			<a href="/2020/03/23/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F%E5%92%8C%E5%8F%91%E5%B8%83%E8%AE%A2%E9%98%85%E6%A8%A1%E5%BC%8F/" title="观察者模式和发布订阅模式" rel="next">
+				下一篇&raquo;
+			</a>
+			
+	</span>
+
+
+      		
+			</div>	
+		</div>
+		
+		<div class="investment-content">
+			<div class="investment-content-list">
+				
+
+<div class="relate-post">
+	
+		<ul>
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2020/03/23/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F%E5%92%8C%E5%8F%91%E5%B8%83%E8%AE%A2%E9%98%85%E6%A8%A1%E5%BC%8F/" title="观察者模式和发布订阅模式">
+								观察者模式和发布订阅模式			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								三月 23日, 2020				
+							</p>
+							<p class="relate-post-content">
+								观察者模式和发布订阅模式观察者模式：是指一个对象（subject）维持一个依赖列表Observer，当主题状态发生变化的时候，会通知观察者集合。发布和观察者都能看到对方都知道对方的存在。比如事件触发。发布订阅模式：观察者和订阅者关联。...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2020/03/23/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F%E5%92%8C%E5%8F%91%E5%B8%83%E8%AE%A2%E9%98%85%E6%A8%A1%E5%BC%8F/" title="观察者模式和发布订阅模式">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="观察者模式和发布订阅模式"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2020/03/21/vue%E8%AF%B7%E6%B1%82%E5%B0%81%E8%A3%85/" title="vue请求封装">
+								vue请求封装			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								三月 21日, 2020				
+							</p>
+							<p class="relate-post-content">
+								js1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2020/03/21/vue%E8%AF%B7%E6%B1%82%E5%B0%81%E8%A3%85/" title="vue请求封装">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="vue请求封装"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2020/03/20/%E9%9D%A2%E8%AF%95%E9%A2%98%E7%9B%AE/" title="面试题目">
+								面试题目			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								三月 20日, 2020				
+							</p>
+							<p class="relate-post-content">
+								vue-loader 的原理是什么
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2020/03/20/%E9%9D%A2%E8%AF%95%E9%A2%98%E7%9B%AE/" title="面试题目">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="面试题目"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2020/01/13/2019%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/" title="2019年终总结">
+								2019年终总结			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								一月 13日, 2020				
+							</p>
+							<p class="relate-post-content">
+								整体来说波折不断，时间很紧，规划的比较粗糙，心力突出分散，计划崩溃1.跳槽较多，浪费了很多时间和金钱。压缩了其他任务的时间2.冲突较多，心情烦躁多变。3.健身计划耽搁，目标120变140斤，然而还是原地踏步4.学习技能加深较慢，js基...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2020/01/13/2019%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/" title="2019年终总结">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="2019年终总结"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2020/01/09/%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%9A%84%E7%94%9F%E6%88%90/" title="随机数的生成">
+								随机数的生成			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								一月 9日, 2020				
+							</p>
+							<p class="relate-post-content">
+								没有指定范围生成 Math.floor(Math.random()*Number) 从0开始到Number，但不包含Number指定范围随机数的生成 Math.floor(Math.random()*(max-min+1)+min) ...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2020/01/09/%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%9A%84%E7%94%9F%E6%88%90/" title="随机数的生成">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="随机数的生成"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2020/01/08/leetcode/" title="leetcode">
+								leetcode			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								一月 8日, 2020				
+							</p>
+							<p class="relate-post-content">
+								1.第796题—旋转字符串有一字符串A： abcde 旋转一次变为 bcdea，如果旋转若干次A能变成B 返回true否则返回false
+js123var rotateString = function (A,B)&#123;    ...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2020/01/08/leetcode/" title="leetcode">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="leetcode"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2020/01/02/%E9%98%B2%E6%8A%96%E5%92%8C%E8%8A%82%E6%B5%81/" title="防抖和节流">
+								防抖和节流			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								一月 2日, 2020				
+							</p>
+							<p class="relate-post-content">
+								1 防抖 debouncedebounce防抖 :在事件被触发n秒后执行，如果在此时间再次触发事件，则重新开始计时。例如联想搜索 
+html1&lt;input type="text" id="phone"&gt;
+js1234567...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2020/01/02/%E9%98%B2%E6%8A%96%E5%92%8C%E8%8A%82%E6%B5%81/" title="防抖和节流">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="防抖和节流"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/12/30/%E5%AD%97%E7%AC%A6%E5%AF%B9%E6%AF%94/" title="字符对比">
+								字符对比			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十二月 30日, 2019				
+							</p>
+							<p class="relate-post-content">
+								12345678910111213// values 是个数组let normalized = values.map((text)=&gt;&#123;    text.normalize();&#125;)normalized.so...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/12/30/%E5%AD%97%E7%AC%A6%E5%AF%B9%E6%AF%94/" title="字符对比">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="字符对比"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/12/24/vscode%E5%AE%89%E8%A3%85/" title="vscode安装">
+								vscode安装			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十二月 24日, 2019				
+							</p>
+							<p class="relate-post-content">
+								1.首先去官网安转对应环境下的版本点击跳转官网下载2.如果需要设置中文ctrl + shif + p 输入language 找到configure display language 输入框右边的recently used点击它后安装第...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/12/24/vscode%E5%AE%89%E8%A3%85/" title="vscode安装">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="vscode安装"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/12/19/js%E7%B2%BE%E5%BA%A6%E6%8D%9F%E5%A4%B1%E9%97%AE%E9%A2%98/" title="js精度损失问题">
+								js精度损失问题			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十二月 19日, 2019				
+							</p>
+							<p class="relate-post-content">
+								所有计算机编程语言里浮点数计算会存在精度丢失问题（或称舍入误差），其根本原因是二进制和实现位数限制有些数无法有限表示在我的前端工作中，整数的运算很少出现精度损失的问题，除非超过Math.pow(2,53)的超大整数，但是在电商项目中，...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/12/19/js%E7%B2%BE%E5%BA%A6%E6%8D%9F%E5%A4%B1%E9%97%AE%E9%A2%98/" title="js精度损失问题">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="js精度损失问题"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+		</ul>
+	
+</div>	
+			</div>
+			<div class="investment-content-list">
+				<div class="layout-comment">
+
+	
+
+		
+
+			<!-- I don't know !!!-->
+			<div>Please check the comment setting in config.yml of hexo-theme-Annie!</div>
+			
+		
+		
+	
+
+</div>
+			</div>
+			<div class="investment-content-list">
+				<div class="layout-share">
+	
+	
+
+		
+			
+			<!-- socialShare share -->
+			<div class="social-share"></div>
+
+<!--  css & js -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+			
+		
+		
+	
+</div>
+
+
+			</div>
+		</div>	
+	</div>
+	</div>
+</div>
+
+
+
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+
+
+	
+
+
+<!-- show math formula -->
+
+
+
+	 
+	<script src="/plugin/clipboard/clipboard.js"></script>
+	<script>
+		// Copy code !
+	    function codePreprocessing() {
+	        $("#article-content .highlight").each(function() {
+
+	            $(this).wrap('<div id="post-code"></div>');
+
+	        })
+
+	        $("#article-content #post-code").each(function() {
+
+	            $(this).prepend('<nav class="copy-nav"><span><i class="code-language"></i></span></nav>');
+
+	        })
+
+	        $("#article-content .copy-nav").each(function() {
+	            var temp = $(this).next().attr('class'),
+	                language = ((temp.length > 9) && (temp != null)) ? temp.substr(10) : "none"; //why 9? Need to check language?
+
+	            $(this).find('.code-language').text(language);
+
+	            $(this).append('<span class="copy-btn"><i class="fa fa-copy" aria-hidden="true"></i></span>');
+
+	        });
+	    }
+
+		function codeCopy() {
+		    $('#article-content #post-code').each(function(i) {
+		        var codeCopyId = 'codeCopy-' + i;
+
+		        var codeNode = $(this).find('.code'),
+		            copyButton = $(this).find('.copy-btn');
+
+		        codeNode.attr('id', codeCopyId);
+		        copyButton.attr('data-clipboard-target-id', codeCopyId);
+		    })
+
+		    
+			var clipboard = new ClipboardJS('.copy-btn', {
+					target: function(trigger) {
+						return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
+					}
+		      	});
+
+			//pure js
+			function showTooltip(elem, msg) {		   
+				elem.setAttribute('aria-label', msg);
+				elem.setAttribute('class', 'copy-btn copy-status');
+				setTimeout(function() {
+					elem.setAttribute('class', 'copy-btn');
+				}, 2000);
+			}
+
+			clipboard.on('success', function(e) {
+			    e.clearSelection();
+			    console.info('Action:', e.action);		   
+			    console.info('Trigger:', e.trigger);
+			    showTooltip(e.trigger, 'Copied!');
+			    
+			});
+			clipboard.on('error', function(e) {
+			    console.error('Action:', e.action);
+			    console.error('Trigger:', e.trigger);
+			});
+		
+
+		}
+
+		if ($('.layout-post').length) {
+		    codePreprocessing();
+		    codeCopy();
+		} 
+	</script>
+
+
+
+
+
+<link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+<script src="/plugin/fancybox/jquery.fancybox.js"></script>
+
+<script type="text/javascript">
+	var titleID = $('.article-title a'),
+		imageID = $('.article-content img'),
+		videoID = $('.article-content video');
+
+	var postTitle = titleID.text() ? titleID.text() : "No post title!";
+
+	imageID.each(function() {
+		var imgPath = $(this).attr('src'),
+			imgTitle = $(this).attr('alt') ? $(this).attr('alt') : "No image description!";
+
+		//给每个匹配的<img>元素打包, 即添加父元素<a>
+		$(this).wrap('<a data-fancybox="gallery" data-caption=" 《 ' + postTitle + ' 》 ' + imgTitle + ' "  href=" ' + imgPath + ' "> </a>');
+	});
+
+	videoID.each(function() {
+		var videoPath = $(this).attr('src');
+
+		//给每个匹配的<img>元素打包, 即添加父元素<a>
+		$(this).wrap('<a data-fancybox href=" ' + videoPath + ' "> </a>');
+	});
+	//TODO：支持html5 video
+
+	if($('#layout-post').length) {
+		$('[data-fancybox="gallery"]').fancybox({
+			loop: true,
+			buttons: [
+				"zoom",
+				"share",
+				"slideShow",
+				"fullScreen",
+				//"download",
+				"thumbs",
+				"close"
+			],
+			protect: false
+		});
+	}
+</script>
+		</main>
+
+		<!--footer-->
+		<footer>
+	<div class="social">
+		<ul>
+	
+		<li>
+			<a href="https://github.com/xuesongcc" target="_blank">
+				<i class="fa fa-github"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="https://s.weibo.com" target="_blank">
+				<i class="fa fa-weibo"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://twitter.com/" target="_blank">
+				<i class="fa fa-twitter"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="https://github.com/xuesongcc" target="_blank">
+				<i class="fa fa-rss"></i>
+			</a>
+		</li>
+			
+</ul>
+
+	</div>
+		
+	<div class="copyright">
+		<p>
+			 
+				&copy;2017 - 2020, content by xuesong. All Rights Reserved.
+			
+			
+			
+
+	<!-- busuanzi -->
+	<!-- busuanzi -->
+
+		
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	
+
+		<span id="busuanzi_container_page_pv">
+	  		本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+		</span>
+
+	
+
+
+
+
+		</p>
+		<p>
+			<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.
+			<a href="javascript:zh_tran('s');" class="zh_click" id="zh_click_s">简体</a> 
+			<a href="javascript:zh_tran('t');" class="zh_click" id="zh_click_t">繁體</a>				
+		</p>
+	</div>		
+</footer>
+		
+	<!-- set '1' to show motto in all pages! -->
+
+	<script src="/plugin/motto/motto.js"></script>
+	
+	<script type="text/javascript">
+		$(".motto").html( getMingYanContent() );
+	</script>	
+
+
+
+
+
+<!-- love effect -->
+
+
+<!-- back to top -->
+
+	
+	<div id="totop">
+  		<a href="javascript:;"  name="TOTOP" class="fa fa-arrow-up" ></a>
+	</div>
+
+
+
+
+<!-- site analysis -->
+
+
+	<!-- site-analysis -->
+	
+
+	
+	
+	
+	
+ 
+
+<script src="/plugin/vibrant/vibrant.js"></script>
+<script src="/plugin/chinese/chinese.js"></script>
+<script src="/plugin/imgLazyLoader/yall.min.js"></script>
+<script src="/plugin/imgResize/jquery.resizeimagetoparent.min.js"></script>
+<script src="/plugin/nicescroll/jquery.nicescroll.js"></script>
+<script src="/js/resizediv.js"></script>
+<script src="/js/main.js"></script>
+	</body>	
+</html>
+<script type="text/javascript" src="/js/click_show_text.js"></script>
