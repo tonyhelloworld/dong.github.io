@@ -299,7 +299,7 @@
 
 	<a href="/2020/01/02/%E9%98%B2%E6%8A%96%E5%92%8C%E8%8A%82%E6%B5%81/" itemprop="url">
 		<time datetime="2020-01-02T15:02:22.000Z" itemprop="dateUpdated">
-	  		2020-01-08
+	  		2020-04-10
 	  </time>
 	</a> 
 
@@ -330,7 +330,8 @@
 <h3 id="2-节流-throttle"><a href="#2-节流-throttle" class="headerlink" title="2 节流 throttle"></a>2 节流 throttle</h3><p>throttle节流:如果持续触发一个事件，在一定时间内只执行一次。例如重复点击</p>
 <figure class="highlight bash"><figcaption><span>html</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;button id=<span class="string">"clickid"</span>&gt;节流&lt;/button&gt;</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight bash"><figcaption><span>js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">// 节流</span><br><span class="line">   <span class="keyword">function</span> <span class="function"><span class="title">throttle</span></span>() &#123;</span><br><span class="line">       console.log(<span class="string">'点击了'</span>)</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="built_in">let</span> clickidDoc = document.querySelector(<span class="string">'#clickid'</span>)</span><br><span class="line"></span><br><span class="line">   <span class="keyword">function</span> nextClick(func, deplayTime) &#123;</span><br><span class="line">       <span class="built_in">let</span> timer;</span><br><span class="line">       <span class="built_in">return</span> () =&gt; &#123;</span><br><span class="line">           // 定时器存在，无法点击</span><br><span class="line">           <span class="keyword">if</span> (timer) &#123;</span><br><span class="line">               console.log(<span class="string">'禁止点击了'</span>)</span><br><span class="line">           &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">               func();</span><br><span class="line">               timer = setTimeout(() =&gt; &#123;</span><br><span class="line">                   clearTimeout(timer)</span><br><span class="line">                   timer = null;</span><br><span class="line">               &#125;, deplayTime)</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">   &#125;</span><br><span class="line">   <span class="built_in">let</span> clickButton = nextClick(throttle, 200);</span><br><span class="line">   clickidDoc.addEventListener(<span class="string">'click'</span>, () =&gt; &#123;</span><br><span class="line">       clickButton()</span><br><span class="line">   &#125;)</span><br></pre></td></tr></table></figure>	
+<figure class="highlight bash"><figcaption><span>js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">// 节流</span><br><span class="line">   <span class="keyword">function</span> <span class="function"><span class="title">throttle</span></span>() &#123;</span><br><span class="line">       console.log(<span class="string">'点击了'</span>)</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="built_in">let</span> clickidDoc = document.querySelector(<span class="string">'#clickid'</span>)</span><br><span class="line"></span><br><span class="line">   <span class="keyword">function</span> nextClick(func, deplayTime) &#123;</span><br><span class="line">       <span class="built_in">let</span> timer;</span><br><span class="line">       <span class="built_in">return</span> () =&gt; &#123;</span><br><span class="line">           // 定时器存在，无法点击</span><br><span class="line">           <span class="keyword">if</span> (timer) &#123;</span><br><span class="line">               console.log(<span class="string">'禁止点击了'</span>)</span><br><span class="line">           &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">               func();</span><br><span class="line">               timer = setTimeout(() =&gt; &#123;</span><br><span class="line">                   clearTimeout(timer)</span><br><span class="line">                   timer = null;</span><br><span class="line">               &#125;, deplayTime)</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">   &#125;</span><br><span class="line">   <span class="built_in">let</span> clickButton = nextClick(throttle, 200);</span><br><span class="line">   clickidDoc.addEventListener(<span class="string">'click'</span>, () =&gt; &#123;</span><br><span class="line">       clickButton()</span><br><span class="line">   &#125;)</span><br></pre></td></tr></table></figure>
+	
 	</div>
 	
 	<div id="current-post-cover" data-scr="/img/cart_cover.jpg"></div>
@@ -413,6 +414,30 @@
 							<a href="/2019/12/19/js%E7%B2%BE%E5%BA%A6%E6%8D%9F%E5%A4%B1%E9%97%AE%E9%A2%98/" title="js精度损失问题">				
 								
 								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="js精度损失问题"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2020/04/10/%E6%89%8B%E5%86%99bind%E5%92%8Ccall%E5%8F%8Aapply/" title="手写bind和call及apply">
+								手写bind和call及apply			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								四月 10日, 2020				
+							</p>
+							<p class="relate-post-content">
+								自定义bind和call及apply重要的是this和参数```bash js// 设置公共this方法let pubContext = funtion(){return this}
+Function.prototype._bind ...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2020/04/10/%E6%89%8B%E5%86%99bind%E5%92%8Ccall%E5%8F%8Aapply/" title="手写bind和call及apply">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="手写bind和call及apply"/>
 							</a>
 						</div>
 					</li>											
@@ -575,29 +600,6 @@ js123var rotateString = function (A,B)&#123;    ...
 							<a href="/2020/01/08/leetcode/" title="leetcode">				
 								
 								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="leetcode"/>
-							</a>
-						</div>
-					</li>											
-			
-			
-					<li>
-						<div class="relate-post-text">
-							<a class="relate-post-title" href="/2019/12/30/%E5%AD%97%E7%AC%A6%E5%AF%B9%E6%AF%94/" title="字符对比">
-								字符对比			
-							</a>
-							<p class="relate-post-date">
-								<i class="fa fa-calendar"></i>
-								十二月 30日, 2019				
-							</p>
-							<p class="relate-post-content">
-								12345678910111213// values 是个数组let normalized = values.map((text)=&gt;&#123;    text.normalize();&#125;)normalized.so...
-							</p>
-						</div>
-
-						<div class="relate-post-cover">
-							<a href="/2019/12/30/%E5%AD%97%E7%AC%A6%E5%AF%B9%E6%AF%94/" title="字符对比">				
-								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="字符对比"/>
 							</a>
 						</div>
 					</li>											
